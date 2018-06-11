@@ -1,0 +1,83 @@
+<!-- 弹窗-提取金额 -->
+<div>
+<div v-bind:class="withdraw.popUpFlag">
+	<section class="wrap w-pad">
+		<div class="popup-bg">
+			<div class="popup-dialog">
+				<div class="popup-header">
+					<button type="button" class="close">
+						<h3>请输入验证码</h3>
+						<span class="popup-model-close" onclick="withdraw_close_popUp()">&times;</span>
+					</button>
+				</div>
+				<div class="popup-info">
+					<div>提币</div>
+					<div class="popup-info-number">8.9383838383 BTC</div>
+					<!--<form>-->
+					<!--<ul class="w-pad form-group">-->
+					<!--<li>-->
+					<!--<label>收款地址：</label>-->
+					<!--<input class="orm-control" type="text" value="" placeholder="sddiiiidkdkkkddddddddddddd">-->
+					<!--</li>-->
+					<!--<li>-->
+					<!--<label>金额：</label>-->
+					<!--<input class="orm-control" type="text" value="" placeholder="请输⼊入⽐比特币⾦金金额">-->
+					<!--</li>-->
+					<!--<li>-->
+					<!--<label>手续费：</label>-->
+					<!--<input class="orm-control" type="text" value="" placeholder="0.01 BTC">-->
+					<!--</li>-->
+					<!--</ul>-->
+					<!--</form>-->
+				</div>
+				<div class="popup-info-tel">
+				    <div>验证码已发送到: +86 <span>13403236423</span></div>
+					<div class="popup-info-tel-check" id="checkInpt">
+						<input type="number"  autofocus="autofocus">
+						<input type="number" class="no-right-border">
+						<input type="number">
+						<input type="number" class="no-right-border">
+						<input type="number">
+						<input type="number" class=""  oninput="withdraw_go_details(this)">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</div>
+</div>
+<!--<section class="wrap w-pad">-->
+	<!--<div class="popup-bg">-->
+		<!--<div class="popup-dialog">-->
+			<!--<div class="popup-header">-->
+				<!--<h2></h2>-->
+				<!--<button class="close" type="button">-->
+					<!--<span>&times;</span>-->
+				<!--</button>-->
+
+			<!--</div>-->
+			<!--<div class="popup-body mar-t2">-->
+				<!--<form>-->
+					<!--<ul class="w-pad form-group">-->
+						<!--<li>-->
+							<!--<label>收款地址：</label>-->
+							<!--<input class="orm-control" type="text" value="" placeholder="sddiiiidkdkkkddddddddddddd">-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<label>金额：</label>-->
+							<!--<input class="orm-control" type="text" value="" placeholder="请输⼊入⽐比特币⾦金金额">-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<label>手续费：</label>-->
+							<!--<input class="orm-control" type="text" value="" placeholder="0.01 BTC">-->
+						<!--</li>-->
+					<!--</ul>-->
+				<!--</form>-->
+			<!--</div>-->
+			<!--<div class="popup-footer tc mar-tb2">-->
+				<!--<button class="btn btn-primary" type="button">提取</button>-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</section>>-->
+<!--</div>-->

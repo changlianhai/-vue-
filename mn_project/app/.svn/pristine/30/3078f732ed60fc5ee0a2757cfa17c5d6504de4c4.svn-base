@@ -1,0 +1,91 @@
+{
+  "data": {
+    "dayIncome":122,
+    "catIfno": [
+      {
+        "catIp": "192.168.0.185",
+        "catName": "猫盘测试1",
+        "createTime": "2018-05-17 12:34:33.0",
+        "id": 2,
+        "isActive": 1,
+        "isopen": -1,
+        "modifyTime": "2018-05-17 16:22:13.0",
+        "sn": "BHS8H51051000028",
+        "status": -1,
+        "userId": "365d1b669d6146d896921275a7475e20",
+        "userName": "18295712929"
+      },
+      {
+        "catIp": "192.168.0.185",
+        "catName": "猫盘测试1",
+        "createTime": "2018-05-17 12:34:33.0",
+        "id": 2,
+        "isActive": 1,
+        "isopen": -1,
+        "modifyTime": "2018-05-17 16:22:13.0",
+        "sn": "BHS8H51051000028",
+        "status": -1,
+        "userId": "365d1b669d6146d896921275a7475e20",
+        "userName": "18295712929"
+      },
+      {
+        "catIp": "192.168.0.185",
+        "catName": "猫盘测试1",
+        "createTime": "2018-05-17 12:34:33.0",
+        "id": 2,
+        "isActive": 0,
+        "isopen": -1,
+        "modifyTime": "2018-05-17 16:22:13.0",
+        "sn": "BHS8H51051000028",
+        "status": 1,
+        "userId": "365d1b669d6146d896921275a7475e20",
+        "userName": "18295712929"
+      },
+      {
+        "catIp": "192.168.0.185",
+        "catName": "猫盘测试1",
+        "createTime": "2018-05-17 12:34:33.0",
+        "id": 2,
+        "isActive": 0,
+        "isopen": 1,
+        "modifyTime": "2018-05-17 16:22:13.0",
+        "sn": "BHS8H51051000028",
+        "status": 1,
+        "userId": "365d1b669d6146d896921275a7475e20",
+        "userName": "18295712929"
+      },
+      {
+        "catIp": "192.168.0.185",
+        "catName": "猫盘测试1",
+        "createTime": "2018-05-17 12:34:33.0",
+        "id": 2,
+        "isActive": 0,
+        "isopen": 1,
+        "modifyTime": "2018-05-17 16:22:13.0",
+        "sn": "BHS8H51051000028",
+        "status": 1,
+        "userId": "365d1b669d6146d896921275a7475e20",
+        "userName": "18295712929"
+      },
+      {
+        "catIp": "192.168.0.185",
+        "catName": "猫盘测试1",
+        "createTime": "2018-05-17 12:34:33.0",
+        "id": 2,
+        "isActive": 0,
+        "isopen": 1,
+        "modifyTime": "2018-05-17 16:22:13.0",
+        "sn": "BHS8H51051000028",
+        "status": -1,
+        "userId": "365d1b669d6146d896921275a7475e20",
+        "userName": "18295712929"
+      }
+    ],
+    "isActive":3,
+    "totalCount":5
+
+  },
+  "mid": "99999",
+  "result":true
+
+}

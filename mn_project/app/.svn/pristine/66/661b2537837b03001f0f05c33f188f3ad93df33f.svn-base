@@ -1,0 +1,76 @@
+/*nav ico*/
+.more-ico{
+	position:absolute;
+	right:2rem;
+	top:0;
+}
+.more-ico i{
+	width:1.8rem;
+	height:.4rem;
+	background-image:url(../../img/ico-btc-more@1x.png);
+	background-repeat: no-repeat;
+	background-position:right center;
+	background-size:100% auto;
+}
+
+
+/*btc ico*/
+.btc-ico{
+	padding-top:2rem;
+	padding-bottom:1rem;
+}
+.btc-ico i{
+	width:6rem;
+	height:6rem;
+	background-image:url(../../img/ico-mp@3x.png);
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+
+#mn_main .btc-ico i,#mn_details .btc-ico i{
+	background-image:url(../../img/ico-btc@3x.png);
+}
+
+.btc-list-ico i{
+	width:2.2rem;
+	height:2.2rem;
+	margin-right:.6rem;
+	background-image:url(../../img/ico-list@3x.png);
+	background-repeat:no-repeat;
+	background-size:99% auto;
+}
+
+/*record ico*/
+.record-ico i{
+	width:4.5rem;
+	height:1.7rem;
+	margin-right:.5rem;
+	font-size:1.2rem;
+	text-align:center;
+	vertical-align:1px;
+	line-height:1.7rem;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+.record-ico i.success{
+	color:#fff;
+	background-image:url(../../img/ico-record-success@3x.png);
+}
+.record-ico i.handling{
+	color:#00a0e9;
+	background-image:url(../../img/ico-record-handling@3x.png);
+}
+.record-ico i.fail{
+	color:#999;
+	background-image:url(../../img/ico-record-fail@3x.png);
+}
+
+/*success ico*/
+.success-ico i{
+	width:6rem;
+	height:6rem;
+	margin-bottom:2.5rem;
+	background-image:url(../../img/ico-success@3x.png);
+	background-repeat:no-repeat;
+	background-size:99% auto;
+}

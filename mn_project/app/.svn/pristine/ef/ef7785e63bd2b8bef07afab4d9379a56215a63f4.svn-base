@@ -1,0 +1,47 @@
+//针对淘宝礼包的独立配置信息
+function catdv_info_init(){
+	catdv.datas.tc="ITOYO";
+	hl_config.url={//注意结尾为'/'，下面的连接就可以不用增加开头的'/'了
+		url :"http://maopan.gsie.cn/cat",   // ===>> 接口的真实地址
+		data:"https://tst.heiluo.com/app/data/",
+		temp:"http://tst.heiluo.com/app/model/",
+		js:"http://tst.heiluo.com/app/js/",
+		css:"http://tst.heiluo.com/app/css/",
+		testUrl: 'http://tst.heiluo.com/app/data/miningList.json'
+	};
+    // vue引入mint-ui组件库
+    Vue.use(MINT);
+
+    /**
+     *  引入页面，调取App获取用户的信息
+     */
+    function getUserInfo() {
+        return
+        console.log('getUserInfo');
+        var paramObj = {};
+        var url = '';
+        catdv.ajax.postJsonForm('APPURL', JSON.stringify(paramObj), function (res) {
+
+        });
+
+
+        return;
+        WeixinJSBridge.invoke('getBrandWCPayRequest',data,function(res){
+            if(res.err_msg=="get_brand_wcpay_request:ok"){
+                console.log('微信支付成功');
+                location.href = url;
+            }else{
+                console.log('微信支付失败，请稍后重试');
+            }
+        });
+
+        //==>>得到用户信息，存储到数据池里面
+    }
+
+    getUserInfo();
+
+}
+
+
+
+

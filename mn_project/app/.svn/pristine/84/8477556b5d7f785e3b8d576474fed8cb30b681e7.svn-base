@@ -1,0 +1,37 @@
+<!-- 提币-比特币总数 -->
+<section class="total-withdraw-model">
+	<div class="total-info">
+		<div class="total-info-title">收款地址</div>
+		<div class="total-info-address">sfjdsofjsfjijfoidjfidsjoifsjfjsdfjsji</div>
+	</div>
+
+
+	<div class="total-info">
+		<div class="total-info-title">
+			<span>可提取&nbsp;&nbsp;比特币</span>
+			<span><b>{{ withdraw.sureExtractNum }} </b>(当挖矿7日后解锁)</span>
+		</div>
+		<div class="total-input-sum">
+			<input type="text" placeholder="输入提币数量" class="total-input-sum-info"  v-model="withdraw.extractAll"/>
+			<div class="total-input-sum-all" onclick="total_get_sure_withdraw_all()">全部提取</div>
+		</div>
+		<div class="total-info-price">
+			<span>手续费</span>
+			<span>0</span>
+			<span>BTC(费率5%)</span>
+		</div>
+	</div>
+	<!--<div class="mar-b1">-->
+		<!--可提取⽐比特币：8.9989-->
+		<!--<a class="mar-l1" onclick="">全部提取</a>-->
+	<!--</div>-->
+	<!--<div class="text-muted">-->
+		<!--总⽐比特币：8.9989-->
+		<!--<span class="mar-l1">当⽇挖矿7⽇日后解锁</span>-->
+	<!--</div>-->
+	<div class="total-withdraw-settings ">
+		<div class="btn btn-primary total-withdraw-settings-btn" onclick="withdraw_start()">提取</div>
+	</div>
+</section>
+
+

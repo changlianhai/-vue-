@@ -1,0 +1,12 @@
+<!-- 挖矿中-比特币数据列表 -->
+<ul class="hl-mn-list-group hl-mn-btc-list btc-list-ico clearfix">
+	<li onclick="catdv.link_details()">
+		<i></i>
+		<em>0.22345678 BTC</em>
+		<span>昨天</span>
+	</li>
+</ul>
+<div class="tc mar-t3 hide">
+	<p class="mar-b1">还没有比特币，当日挖矿次日10点前发放</p>
+	<a>猫盘挖矿攻略&nbsp;></a>
+</div>

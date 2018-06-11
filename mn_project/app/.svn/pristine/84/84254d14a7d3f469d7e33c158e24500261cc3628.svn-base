@@ -1,0 +1,34 @@
+<!-- 挖矿中-挖币主界面 -->
+<section class="wrap hl-mn-main">
+	<div class="hl-mn-btc-bg tc w-pad">
+		<div class="btc-ico pad-tb2">
+			<i></i>
+		</div>
+
+		<div class="hl-mn-btc-total">
+			<strong>{{mining.data.totalBTC}}</strong>
+			<span>BTC</span>
+		</div>
+
+		<div class="mar-b3">总比特币</div>
+		<button class="btn btn-withdraw disabled mar-b3" type="button" onclick="catdv.cardInfo_to_link_withdraw()">提取</button>
+	</div>
+
+	<!-- 列表循环 -->
+	<mt-loadmore :top-method="mn_top_load" :bottom-method="mn_bottom_load" :bottom-all-loaded="listDataEnd" ref="listLoadmore" :auto-fill="false">
+		<ul class="hl-mn-list-group hl-mn-btc-list btc-list-ico clearfix">
+			<li onclick="catdv.link_details()" v-for="(item, index) in mining.data.list" :key="index" :id="item.id" :userId="item.userId" :status="item.status" :createTime="item.createTime" >
+				<i></i>
+				<em>{{item.pow}}</em>
+				<span>{{item.createTime | showDate}}</span>
+			</li>
+		</ul>
+	</mt-loadmore>
+
+
+	<div class="tc mar-t4" :noBTCClass="mining.data.noBTCClass">
+		<p class="mar-b1">还没有比特币，当日挖矿次日10点前发放</p>
+		<a>猫盘挖矿攻略&nbsp;></a>
+	</div>
+
+</section>

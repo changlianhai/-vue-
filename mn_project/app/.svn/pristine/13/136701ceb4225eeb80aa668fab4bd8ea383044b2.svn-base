@@ -1,0 +1,9 @@
+<!-- 弹窗-提取金额 -->
+<div >
+    <div onclick="catdv.to_link_mining()" class="hl_tst_d1">
+        挖矿
+    </div>
+    <div onclick="catdv.to_link_login()" >
+        登录
+    </div>
+</div>

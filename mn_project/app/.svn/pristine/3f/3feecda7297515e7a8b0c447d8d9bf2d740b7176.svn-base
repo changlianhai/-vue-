@@ -1,0 +1,53 @@
+.open-success-model-tips {
+    padding: 6rem 0;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.open-success-model-tips-time {
+    padding: 2rem 0;
+    font-size: 1.3rem;
+    color: #666;
+}
+
+.open-success-model-cont {
+    padding: 0 1.5rem;
+}
+
+.open-success-model-li {
+    padding:1rem 0;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom:1px solid #ccc;
+}
+
+.open-success-model-li-key {
+    -webkit-flex-basis: 5rem;
+    flex-basis: 6rem;
+    font-size: 1.2rem;
+    color:#999;
+
+}
+
+.open-success-model-li-val {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    text-align: right;
+    font-size: 1.2rem;
+    color:#333;
+
+}
+.open-success-model-settings {
+    padding: 4rem 1rem;
+}
+.open-success-model-settings-btn {
+    padding:0;
+    display: block;
+    font-size:1.2rem;
+}

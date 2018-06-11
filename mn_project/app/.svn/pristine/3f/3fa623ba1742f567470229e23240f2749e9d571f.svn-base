@@ -1,0 +1,48 @@
+/* --------------- more更多页面跳转  start--------------*/
+// ===>> 矿机开关
+catdv.miner_change = function () {
+    catdv.toLink('mining');
+};
+
+// ===>> 矿机数量
+catdv.miner_status = function () {
+    catdv.toLink('miner');
+};
+
+
+// ===>> 收款地址
+catdv.address_settings = function () {
+    catdv.datas.apd.withdraw.isAddressFlag = false;
+    catdv.toLink('add');
+};
+
+// ===>> 提币记录
+catdv.withdraw_record = function () {
+    catdv.toLink('withdraw_record');
+};
+
+
+// ===>> 挖矿攻略
+catdv.link_withdraw_add = function() {
+    catdv.toLink('add');
+};
+
+/* --------------- more更多页面跳转  end-------------*/
+
+
+
+
+
+
+
+// ===>>挖矿中页面头部，三个点挑战到更多页面
+catdv.link_more = function () {
+   catdv.toLink('more');
+};
+
+
+catdv.link_details = function () {
+   catdv.toLink('details');
+};
+
+

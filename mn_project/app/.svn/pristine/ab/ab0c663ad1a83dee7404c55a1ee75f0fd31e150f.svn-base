@@ -1,0 +1,28 @@
+<!-- 挖矿中-挖币主界面 -->
+<section class="wrap">
+	<div class="btc-bg tc w-pad">
+		<div class="btc-ico pad-tb2">
+			<i></i>
+		</div>
+		<strong>1.00123456</strong>
+		<div class="mar-b3">总比特币</div>
+		<button class="btn btn-warning mar-b3" type="button">提取</button>
+	</div>
+	<ul class="btc-list clearfix">
+		<li>
+			<i></i>
+			<em>0.22345678 BTC</em>
+			<span>昨天</span>
+		</li>
+		<li>
+			<i></i>
+			<em>0.22345678 BTC</em>
+			<span>05-01</span>
+		</li>
+		<li>
+			<i></i>
+			<em>0.22345678 BTC</em>
+			<span>2017-12-31</span>
+		</li>
+	</ul>
+</section>

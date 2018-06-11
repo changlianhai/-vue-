@@ -1,0 +1,19 @@
+<section class="wrap bg-wrap bg-muted hl-wd-record mt-loadmore-area hl-list">
+    <mt-loadmore :top-method="record_top_load" :bottom-method="record_bottom_load" :bottom-all-loaded="listDataEnd" ref="listLoadmore" :auto-fill="false">
+        <div class="hl-mn-list-group hl-wd-record-list record-ico clearfix" id="recordsContent"  v-for="(item, index) in withdraw.records" onclick="catdv.records_details(this)" :cost="item.cost" :address="item.address" :time="item.createtime | showDate" :money="item.money" :recordId="item.recordId">
+            <dl>
+                <dt>
+                    <i  :class="item.status | recordClass">{{item.status | recordStatus}}</i>
+                    {{item.address}}
+                </dt>
+                <dd>
+                    <small>{{item.createtime | showDate}}</small>
+                    <div class="record-btc"><strong>{{item.money  }}</strong>BTC</div>
+                </dd>
+            </dl>
+        </div>
+    </mt-loadmore>
+</section>
+
+
+

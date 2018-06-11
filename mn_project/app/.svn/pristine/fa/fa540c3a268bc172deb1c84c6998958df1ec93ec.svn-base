@@ -1,0 +1,93 @@
+/*
+ * 定义vue的filter
+ */ 
+function vueFilterInit(){
+	/**
+	 * 将时间戳转为目标时间格式
+	 */
+	Vue.filter("showDate",function(d,f){
+		if(!d){
+			return;
+		}
+		if(!f){
+			f='yyyy-MM-dd HH:mm:ss';
+		}
+		var sd=new Date(d).pattern(f);
+		return sd;
+	});
+	/**
+	 * 设置字段截取，默认截取长度30
+	 */
+	Vue.filter('substr',function(v,s){
+		s=s||30;
+		return v.substring(0,s);
+	});
+	/**
+	 * 设置字段默认值
+	 */ 
+	Vue.filter('def',function(v,s){
+		return v?v:s;
+	});
+
+
+    /**
+	 *  将状态数字转为汉字
+     */
+    Vue.filter('isActive', function (v, s) {
+        if (v === 0) return '不活跃';
+        if (v === 1) return '活跃';
+        return '';
+    });
+
+    /**
+	 *  判断猫盘的状态，是开通还是未开通，开通了是开启还是关闭状态
+     */
+    Vue.filter('status', function (v, s) {
+       if (v) {
+           if (v.isopen === -1) {
+               //return '未开通'
+               return '开通'
+           } else {
+               if (v.status ===1) {
+                  // return '开启';
+                   return '关启';
+               } else {
+                  // return '关闭';
+                   return '开启';
+               }
+           }
+	   }
+	   return '';
+    });
+
+
+    /**
+	 * 猫盘在线的状态
+     */
+    Vue.filter('isOnLine', function (v) {
+		if (v) {
+			if (v > 0) {
+				return '活跃';
+			} else  {
+				return '不活跃';
+			}
+		}
+    });
+
+
+    /**
+     * 将科学计数法的数字转为数字
+     */
+    Vue.filter('SecCount', function (v) {
+       return   new Number('0E-8');
+    });
+
+    Vue.filter('addressFormat', function (v) {
+    	if(v.length === 0) {
+    		return '';
+		}
+        return   v.slice(0, 10) + '...' + v.slice(v.length-10);
+    });
+
+}
+

@@ -1,0 +1,8 @@
+<!-- 导航-默认状态 -->
+<header class="tc">
+  <a class="arrow-r" onclick="go_prev_page()"></a>
+  <span>{{nav.title}}</span>
+  <div class="address-model-save" onclick="address_model_save()" :class="nav.address_flag">保存</div>
+  <a class="arrow-l" onclick="catdv.go_prev_page()"></a>
+
+</header>

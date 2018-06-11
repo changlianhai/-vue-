@@ -1,0 +1,159 @@
+//配置类属性，通用url前缀
+const hl_config={
+	debug:1,
+	de_data:{
+//		list:1,
+//		info:1
+	},
+	homepage:"mining",
+	url:{},//主要url
+	tmp:{},//已经加载过的模版
+	router:{},//路由
+	model:{},//模块
+	temp:{},//模板
+	jsl:{},//已经被动态加载的js文件
+	cssl:{},//已经被动态加载的css文件
+	comp:{},//已经加载过的子模块
+	tmp:{},//临时对象
+	suf:{
+		temp:'.html',
+		data:'.shtml',
+		js:'.js',
+		css:'.css'
+	},
+	//功能页面
+	page:{//项目相关独立页面
+		tst:{
+			main:"tst",
+			tit:"测试页1",
+			chr:["tst1"]
+		},
+		tst2:{
+			main:"tst2",
+			tit:"测试页2啊",
+			chr:["tst2"]
+		},
+		mining:{
+			main:"mining",
+			tit:"挖矿",
+			chr:["nav","mining"]
+		}
+		// home:{//主页
+		// 	main:"colNews",
+		// 	tit:"新闻列表",
+		// 	chr:["colNews"],
+		// 	isNoLogin:true
+		// },
+		// recNews:{//推荐的新闻列表
+		// 	main:"recNews",
+		// 	tit:"推荐新闻",
+		// 	chr:["recNews"],
+		// 	isNoLogin:true
+		// },
+		// newsInfo:{//推荐礼包
+		// 	main:"newsInfo",
+		// 	tit:"新闻详情",
+		// 	chr:["newsInfo"],
+		// 	isNoLogin:true
+		// },
+		// gameInfo:{//游戏信息
+		// 	main:"gameInfo",
+		// 	tit:"游戏信息",
+		// 	chr:["gameInfo"],
+		// 	isNoLogin:true
+		// }
+	},//以上每新增页面，需要到by_share中增加对应的分享数据处理方法
+	// 页面模板路由
+	pModule:{//页面中的模块，不同页面可用相同模块
+		tst1:{
+			url:"tst/tst_1",
+			js:"tolink/tolink",
+			css:"tst/tst"
+		},
+		tst2:{
+			url:"tst/tst_2",
+			js:"tolink/tolink",
+			css:"tst/tst"
+		},
+		nav:{
+			url:"nav/nav",
+			js:"tolink/tolink",
+			css:["nav/nav"]
+		},
+		mining:{
+			url:"mining/mining",
+			js:"mining/mining",
+			css:["common/common","common/forms","nav/nav"]
+		}
+		// colNews:{//新闻列表
+		// 	url:"news/clist",
+		// 	js:"news/news",
+		// 	css:["news/news","font","gener"],
+		// 	data:"colNews",
+		// 	comp:"newsItem",
+		// 	isList:true
+		// },
+		// recNews:{//新闻列表
+		// 	url:"news/rlist",
+		// 	js:"news/news",
+		// 	css:["news/news","font","gener"],
+		// 	data:"recNews",
+		// 	comp:"newsItem",
+		// 	isList:true
+		// },
+		// newsInfo:{//新闻内容
+		// 	url:"news/info",
+		// 	js:"news/news",
+		// 	css:["news/news","font","gener"],
+		// 	data:"newsInfo"
+		// },
+		// gameInfo:{//游戏信息
+		// 	url:"game/info",
+		// 	js:"game/game",
+		// 	css:["game/game"]
+		// }
+	},
+	// 数据目标
+	// 属性解析：
+	// s:所在页数；p:每页数据量;
+	pData:{//模块初始化所相关主动数据请求，不同模块可相关相同数据请求
+		// colNews:{
+		// 	url:"col/newsDatas",
+		// 	meth:"get",
+		// 	dtg:"clist",
+		// 	param:{
+		// 		w:"w",
+		// 		s:"s",
+		// 		p:"p"
+		// 	}
+		// },
+		// recNews:{
+		// 	url:"col/recNews",
+		// 	meth:"get",
+		// 	dtg:"rlist",
+		// 	param:{
+		// 		w:"w",
+		// 		s:"s",
+		// 		p:"p"
+		// 	}
+		// },
+		// newsInfo:{
+		// 	url:"col/newsData",
+		// 	meth:"get",
+		// 	dtg:"ninfo",
+		// 	param:{
+		// 		id:"id"
+		// 	}
+		// }
+	},
+	pComp:{//子模块，不同模块可调用相同子模块，同一子模块可对应不同数据请求，但需要保证返回数据的字段匹配性
+		// newsItem:{
+		// 	tn:"news_item",
+		// 	url:"news/ndata",
+		// 	js:"news/news",
+		// 	css:"news/news"
+		// }
+	},
+	pMenu:{//页面相关菜单，不同页面可调用相同菜单
+	}
+};

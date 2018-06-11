@@ -1,0 +1,33 @@
+<!-- 弹窗-提取金额 -->
+<section class="wrap w-pad">
+	<div class="popup-bg">
+		<div class="popup-dialog">
+			<div class="popup-header">
+				<button type="button" class="close">
+					<span>&times;</span>
+				</button>
+			</div>
+			<div class="popup-body mar-t2">
+				<form>
+					<ul class="w-pad form-group">
+						<li>
+							<label>收款地址：</label>
+							<input class="orm-control" type="text" value="" placeholder="sddiiiidkdkkkddddddddddddd">
+						</li>
+						<li>
+							<label>金额：</label>
+							<input class="orm-control" type="text" value="" placeholder="请输⼊入⽐比特币⾦金金额">
+						</li>
+						<li>
+							<label>手续费：</label>
+							<input class="orm-control" type="text" value="" placeholder="0.01 BTC">
+						</li>
+					</ul>
+				</form>
+			</div>
+			<div class="popup-footer tc mar-tb2">
+				<button type="button" class="btn btn-primary">提取</button>
+			</div>
+		</div>
+	</div>
+</section>>

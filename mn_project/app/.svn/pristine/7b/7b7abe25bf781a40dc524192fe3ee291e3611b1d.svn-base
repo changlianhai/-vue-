@@ -1,0 +1,382 @@
+/* 本JS控制提币的流程，  提币 ---设置地址，获取地址--输入提币数量 ---提币成功 提币记录  */
+
+/*  提币流程 start */
+// ===>> 1.0  挖矿详情页，提币按钮进行提币
+catdv.cardInfo_to_link_withdraw = function () {
+    var obj = catdv.datas.apd.mining.data;
+    var address = obj.address;
+    var unuseIncome = catdv.datas.apd.withdraw.useIncome;
+
+    // ??? 稍候放开
+    // if (unuseIncome === 0 || unuseIncome.length === 0) {
+    //     MINT.Toast('当前没有可提取的比特币');
+    //     return;
+    // }
+
+
+    // ==>> 依据是否有地址，进行对应调到不同的页面, 导航头部保存按钮的显示和隐藏
+    if (address.length === 0) {
+        catdv.toLink('mn_set_addr');
+        catdv.datas.apd.nav.address_flag = '';
+    } else {
+        catdv.toLink('wd_from');
+        catdv.datas.apd.nav.address_flag = 'hide';
+    }
+
+};
+
+
+// ===>> 2.0 设置收货地址
+catdv.address_model_save = function () {
+    var address = catdv.datas.apd.mining.data.address;
+    var timer = null;
+    var reg = /[a-zA-Z0-9]{34}/;
+    window.clearTimeout(timer);
+    if (address.length === 0) {
+        MINT.Toast({
+            message: '比特币地址不能为空，请输入',
+            duration: 1000
+        });
+        return;
+    }
+
+    // ==>> 验证比特币格式
+    if (!reg.test(address)) {
+        MINT.Toast({
+            message: '收币地址格式不正确，请重新输入',
+            duration: 1000
+        });
+        return;
+    }
+
+    // ===>> ajax进行判断 (***)
+    var paramObj = {};
+    paramObj.session = "365d1b669d6146d896921275a7475e201111";  //用户唯一标识
+    paramObj.mid = "801001001";    //消息码
+    paramObj.method = "save_address";  // 方法名
+    paramObj.params = {
+        address: address   // 收币地址
+    };
+    catdv.ajax.postJsonForm('http://maopan.gsie.cn/cat', JSON.stringify(paramObj), function (res) {
+        if (res.data && res.data.result) {
+            //==>>成功了，将收币地址放到数据池里面
+            MINT.Toast({
+                message: '设置地址成功',
+                duration: 1000
+            });
+            catdv.setData('', 'mining.data.address', address);     //重绘收获地址
+            catdv.datas.apd.nav.address_flag = 'hide';
+
+            timer = setTimeout(function () {
+                var saveFlag = catdv.datas.rVue.history.current.query.saveFlag;
+                if (saveFlag == 1) {
+                    catdv.toLink('mn_set');
+                } else {
+                    catdv.toLink('wd_from');
+                }
+            }, 1200);
+        } else {   // 错误提示用户
+            MINT.Toast(res.data.error.msg);
+        }
+    });
+};
+
+
+// ===>> 3.0获取收币地址，从数据池里面
+catdv.add_get_addresss = function () {
+    //catdv.datas.apd.mining.data.address = catdv.datas.apd.mining.data.address;
+};
+
+
+// ===>> 4.0 单击提币，进行发送手机后给后台，用户输入验证码
+catdv.withdraw_start = function () {
+    var price = catdv.datas.apd.withdraw.useIncome;     //已提取的比特币数量
+    var all = catdv.datas.apd.withdraw.unuseIncome;     //可提取比特币数量
+    var userTel = catdv.datas.apd.mining.data.phone;    //用户手机号
+    // if (price === 0) {
+    //     MINT.Toast('当前没有可提取的比特币');
+    //     return;
+    // }
+    // if (price.length === 0) {
+    //     MINT.Toast('提币数量不能为空，请输入');
+    //     return;
+    // }
+    // if (!window.Number(price)) {
+    //     MINT.Toast({
+    //         message: '提币数量格式不正确，请重新重新输入',
+    //         duration: 600
+    //     });
+    //     window.setTimeout(function () {
+    //         catdv.datas.apd.withdraw.extractAll = '';
+    //     }, 1000);
+    //     return;
+    // }
+    //
+    // if (price > all) {
+    //     catdv.datas.apd.withdraw.tipsFlag = false;
+    //     return;
+    // } else {
+    //     catdv.datas.apd.withdraw.tipsFlag = true
+    // }
+
+    catdv.datas.apd.withdraw.popUpClassFlag = '';  //弹框出来
+    var ipt = document.getElementById('checkInpt').getElementsByTagName('input');
+    ipt[0].focus();
+    //提示用户，正在发送验证码
+    MINT.Indicator.open({
+        text: "验证码发送中,请稍等",
+        spinnerType: "fading-circle"
+    });
+
+
+    //==>>后台给用户手机发送验证码
+    var paramObj = {
+        method: 'sendcode',
+        mid: "202020020",
+        params: {
+            phone: userTel
+        }
+    };
+    // ==>> 调用ajax 进行判断
+    catdv.ajax.postJsonForm('http://maopan.gsie.cn/cat', JSON.stringify(paramObj), function (res) {
+        MINT.Indicator.close();
+        phoneCheck();
+        if (res.data && res.data.result) {
+
+
+        } else {//错误判断
+            MINT.Toast(res.data.error.msg);
+        }
+    });
+};
+
+
+//===>> 5.验证码最后以为输入完毕，进行提币Ajax
+var withdraw_go_details = function (_this) {
+    if (_this.value.length === 1) {
+        //catdv.datas.apd.withdraw.popUpClassFlag = 'hide';
+
+
+        MINT.Indicator.open({
+            text: "提币验证中，请稍等",
+            spinnerType: "fading-circle"
+        });
+
+        //MINT.Indicator.open('校验中，请稍后');
+        var address = catdv.datas.apd.mining.data.address;
+        var money = catdv.datas.apd.withdraw.useIncome.toString();  //===>>提取的BTC
+        var cost = catdv.datas.apd.withdraw.cost.toString();
+        var code = [];
+
+
+        var ipts = document.getElementById('checkInpt').getElementsByTagName("input");
+        for (var i = 0; i < ipts.length; i++) {
+            code.push(ipts[i].value);
+        }
+        code = code.join('');  //==>>转为字符串
+        //console.log(code);
+
+        var paramObj = {
+            method: "save_record",
+            session: "365d1b669d6146d896921275a7475e201111",
+            mid: "3215645154",
+            params: {
+                address: address,
+                money: money,
+                cost: cost,
+                code: code
+
+            }
+        };
+        // ==>> 调用ajax 进行判断
+        catdv.ajax.postJsonForm('http://maopan.gsie.cn/cat', JSON.stringify(paramObj), function (res) {
+            MINT.Indicator.close();
+            if (res.data && res.data.result) {
+                //数据及时更新
+                catdv.setData('', 'withdraw.recordId', res.data.data.recordId);         //订单号
+                catdv.setData('', 'withdraw.cost', res.data.data.cost);                 //手续费
+                catdv.setData('', 'withdraw.address', res.data.data.address);           //收获地址
+                MINT.Toast({
+                    message: '操作成功',
+                    iconClass: 'icon icon-success'
+                });
+                setTimeout(function () {
+                    catdv.datas.apd.withdraw.popUpClassFlag = 'hide';
+                    catdv.toLink('wd_succ');
+                }, 3000);
+            } else {//错误判断
+                MINT.Toast(res.data.error.msg);
+                catdv.datas.apd.withdraw.withdrawTipsFlag = false;
+            }
+        });
+
+
+    }
+
+};
+
+
+catdv.success = function () {
+    catdv.toLink('mn_main');
+};
+
+
+/*   -----    提币步骤完毕  end ------------------        */
+
+
+/*---------      提币记录操作获取列表数据(Ajax请求)  start     ---------------*/
+// ==>> 1.进入页面获取数据
+catdv.record_init = function (e) {
+    console.log('enter11111============>>');
+    var a = catdv.datas.apd;
+    var ev = e, p = a.withdraw.refers.pageNo, s = a.withdraw.refers.pageSize, tc = catdv.datas.tc;
+    var paramObj = {
+        method: "list_record",
+        session: "365d1b669d6146d896921275a7475e201111",
+        mid: "99999",
+        params: {
+            pageNo: 1,
+            pageSize: 10
+        }
+    };
+
+// {"method":"list_record","session":"365d1b669d6146d896921275a7475e201111","mid":"99999","params":{"id":"15","pageNopageSize":"10"}}
+    catdv.ajax.postJsonForm('http://maopan.gsie.cn/cat', JSON.stringify(paramObj), function (res) {
+        if (res.data.result) {
+            var list = res.data.data.records;
+            if (!list || list.length === 0) {//如果请求的列表为空，不在去后台请求
+                a.listDataEnd = true;
+            } else {
+                //将请求数据放入到列表中
+                catdv.setData('', "withdraw", res.data.data); // ====>> 设置数据
+                //重置pageNoNum为请求下一页做准备
+                a.withdraw.refers.pageNo = p;
+
+                var docHeight = document.documentElement.clientHeight || document.body.clientHeight;
+                document.getElementById('recordsContent').style.height = docHeight - 55 + 'px';
+
+               a.withdraw.refers.totalpageNo = Math.ceil((res.data.data.totalCount /  a.withdraw.refers.pageSize));
+            }
+        } else {//错误判断
+            console.log('获取失败，稍候重试');
+        }
+        //去下下拉状态
+        ev.$refs.listLoadmore.onBottomLoaded();
+    });
+};
+
+
+//加载更多，上拉
+catdv.record_bottom_load = function (e) {
+    var a = catdv.datas.apd;
+    var ev = e, p = a.withdraw.refers.pageNo + 1, s = a.withdraw.refers.pageSize, tc = catdv.datas.tc;
+
+    var paramObj = {
+        method: "list_record",
+        session: "365d1b669d6146d896921275a7475e201111",
+        mid: "99999",
+        params: {
+            pageNo: p,
+            pageSize: 10
+        }
+    };
+
+    a.withdraw.refers.pageNo = p;
+    if ( p >=  a.withdraw.refers.totalpageNo) {
+        ev.$refs.listLoadmore.onBottomLoaded();
+        a.listDataEnd = true;
+    }
+    catdv.ajax.postJsonForm('http://maopan.gsie.cn/cat', JSON.stringify(paramObj), function (res) {
+        if (res.data.result) {
+            var oldList = catdv.datas.apd.withdraw.records;
+            var newList = res.data.data.records;
+            if (newList.length > 0 ) {
+                 newList.forEach(function (item, index ,self) {
+                    oldList.push(item);
+                 });
+            }
+
+        } else {//错误判断
+            console.log('获取失败，稍候重试');
+        }
+        //去下下拉状态
+        ev.$refs.listLoadmore.onBottomLoaded();
+    });
+
+};
+
+
+//下拉
+catdv.record_top_load = function (e) {
+    catdv.record_init(e);
+};
+
+/*---------      提币记录操作获取列表数据(Ajax请求)  end    ---------------*/
+
+
+// == 全部提取按钮
+function total_get_sure_withdraw_all() {
+    catdv.datas.apd.withdraw.useIncome = catdv.datas.apd.withdraw.unuseIncome;
+}
+
+
+// ==>> 验证码填写错误， 再一次发送验证码
+function popup_send() {
+    catdv.datas.apd.withdraw.withdrawTipsFlag = true;
+
+    catdv.withdraw_start();
+    var ipt = document.getElementById('checkInpt').getElementsByTagName('input');
+
+    for (var i = 0; i < ipt.length; i++) {
+        ipt[i].value = '';
+    }
+    ipt[0].focus();
+}
+
+
+// ==>> 控制手机验证码失去焦点
+function phoneCheck() {
+    var txts = document.getElementById('checkInpt').getElementsByTagName("input");
+    for (var i = 0; i < txts.length; i++) {
+        var t = txts[i];
+        t.index = i;
+        t.setAttribute("readonly", true);
+        t.onkeyup = function () {
+            this.value = this.value.replace(/^(.).*$/, '$1');
+            var next = this.index + 1;
+            if (next > txts.length - 1) return;
+            txts[next].removeAttribute("readonly");
+            txts[next].focus();
+        }
+    }
+    txts[0].removeAttribute("readonly");
+}
+
+
+//==>>切换tips信息,提示信息
+function user_ipt() {
+    catdv.datas.apd.withdraw.tipsFlag = true
+}
+
+//==>> 关闭弹框
+function withdraw_close_popUp() {
+    catdv.datas.apd.withdraw.popUpClassFlag = 'hide';
+}
+
+
+//==>>输入可提取币数，计算手续费
+function calculation_cost() {
+    catdv.datas.apd.withdraw.cost = (catdv.datas.apd.withdraw.useIncome * 0.05);
+    var price = catdv.datas.apd.withdraw.useIncome;  //用户输入的提取数量
+    var all = catdv.datas.apd.withdraw.unuseIncome;  //总共可提取的数量
+    if (price.length === 0) {
+        catdv.datas.apd.withdraw.cost = 0;
+    }
+    if (price > all) {
+        catdv.datas.apd.withdraw.tipsFlag = false;
+    } else {
+        catdv.datas.apd.withdraw.tipsFlag = true
+    }
+}
+
+

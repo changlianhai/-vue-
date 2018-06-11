@@ -1,0 +1,7 @@
+<!-- 提币-设置比特币地址 -->
+<section class="wrap bg-wrap bg-muted hl-mn-details" onclick="">
+    <div class="hl-set-addr">
+    	<input type="text" class="form-control" placeholder="请输入您的比特币地址" v-model="mining.data.address" />
+    	<a class="w-pad" onclick="catdv.add_get_addresss()">获取比特币的地址</a>
+</div>
+</section>

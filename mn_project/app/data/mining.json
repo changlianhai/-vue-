@@ -1,0 +1,15 @@
+{
+  "mining": {
+    "pageNum": 1,
+    "pageSize": 10,
+    "result": true,
+    "ret": "801001001",
+    "data": {
+      "number": 2,
+      "totalBTC": 121.21,
+      "address": "",
+      "recordList": {
+      }
+    }
+  }
+}

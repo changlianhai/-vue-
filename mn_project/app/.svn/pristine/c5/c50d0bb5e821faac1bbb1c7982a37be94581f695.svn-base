@@ -1,0 +1,34 @@
+<!-- 矿机-矿机状态 -->
+<section class="wrap hl-mn-miner">
+	<div class="hl-mn-btc-bg tc w-pad">
+		<div class="btc-ico pad-tb2">
+			<i></i>
+		</div>
+		<div class="hl-mn-miner-state-list pad-b2">
+			<dl>
+				<dt>{{mining.data.totalCount}}</dt>
+				<dd>全部</dd>
+			</dl>
+			<dl>
+				<dt>{{mining.data.isActive}}</dt>
+				<dd>活跃</dd>
+			</dl>
+			<dl>
+				<dt>{{mining.data.noActive}}</dt>
+				<dd>不活跃</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="bg-wrap bg-muted">
+		<ul class="hl-mn-list-group hl-mn-miner-list mar-t1 clearfix">
+			<li v-for="(item, index) in mining.minerStatus">
+				<h4>
+					<em>{{item.catName}}</em>
+					<sub class="inactive">{{item.isActive | isActive}}</sub>
+					<button class="btn btn-primary list-btn btn-close fr" type="button" onclick="catdv.settings_status()" :isopen="item.isopen" :status="item.status"  :snId="item.sn" usrId="item.userId">{{item |status}}</button>
+				</h4>
+				<p>{{item.catIp}}</p>
+			</li>
+		</ul>
+	</div>
+</section>

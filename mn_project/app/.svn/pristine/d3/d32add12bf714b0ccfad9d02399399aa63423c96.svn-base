@@ -1,0 +1,35 @@
+<!-- 提币-成功 -->
+<div class="hl-withdraw-open-success-model">
+    <div class="hl-withdraw-open-success-model-tips">
+        <div>图片</div>
+        <div class="hl-withdraw-open-success-model-tips-time">实际到账大约需要一个工作日，请注意查收</div>
+    </div>
+    <div class="hl-withdraw-open-success-model-cont">
+        <ul>
+            <li class="hl-withdraw-open-success-model-li">
+                <div class="hl-withdraw-open-success-model-li-key">提币数量</div>
+                <div class="hl-withdraw-open-success-model-li-val">{{withdraw.useIncome}}</div>
+            </li>
+            <li class="hl-withdraw-open-success-model-li">
+                <div class="hl-withdraw-open-success-model-li-key">手续费</div>
+                <div class="hl-withdraw-open-success-model-li-val">{{withdraw.cost}}</div>
+            </li>
+            <li class="hl-withdraw-open-success-model-li">
+                <div class="hl-withdraw-open-success-model-li-key">收货地址</div>
+                <div class="hl-withdraw-open-success-model-li-val">{{mining.data.address}}</div>
+            </li>
+            <li class="hl-withdraw-open-success-model-li">
+                <div class="hl-withdraw-open-success-model-li-key">创建时间</div>
+                <div class="hl-withdraw-open-success-model-li-val">{{mining.data.createTime | showDate}}</div>
+            </li>
+            <li class="hl-withdraw-open-success-model-li">
+                <div class="hl-withdraw-open-success-model-li-key">交易号</div>
+                <div class="hl-withdraw-open-success-model-li-val">{{withdraw.recordId}}</div>
+            </li>
+        </ul>
+    </div>
+    <div class="hl-withdraw-open-success-model-settings ">
+        <div class="btn btn-primary hl-withdraw-open-success-model-settings-btn" onclick="catdv.success()">完成</div>
+    </div>
+
+</div>

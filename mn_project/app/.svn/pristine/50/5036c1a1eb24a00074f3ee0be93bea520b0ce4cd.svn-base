@@ -1,0 +1,21 @@
+/*btc ico*/
+.btc-ico i{
+	width:6rem;
+	height:6rem;
+	background-image:url(../../img/ico-mp@3x.png);
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+
+#mn_main .btc-ico i,#mn_details .btc-ico i{
+	background-image:url(../../img/ico-btc@3x.png);
+}
+
+.btc-list-ico i{
+	width:2.2rem;
+	height:2.2rem;
+	margin-right:.6rem;
+	background-image:url(../../img/ico-list@3x.png);
+	background-repeat:no-repeat;
+	background-size:99% auto;
+}

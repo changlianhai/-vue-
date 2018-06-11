@@ -1,0 +1,32 @@
+<div>
+    <ul class="record-model">
+        <li class="record-model-list">
+            <div class="record-model-list-info">
+                <div class="record-model-list-info-tips">
+                    <div class="record-model-list-info-time">2018-5-11 13:31</div>
+                    <div class="record-model-list-info-address">收货地址</div>
+                </div>
+                <div class="record-model-list-info-number">
+                    -0.12458632487878754BTC
+                </div>
+            </div>
+            <div class="record-model-list-info-order">
+                1Ldsfjdslfjsfjsfoidsjfo-12o-02ow-0do0fo0
+            </div>
+        </li>
+        <li class="record-model-list">
+            <div class="record-model-list-info">
+                <div class="record-model-list-info-tips">
+                    <div class="record-model-list-info-time">2018-5-11 13:31</div>
+                    <div class="record-model-list-info-address">收货地址</div>
+                </div>
+                <div class="record-model-list-info-number">
+                    -0.12458632487878754BTC
+                </div>
+            </div>
+            <div class="record-model-list-info-order">
+                1Ldsfjdslfjsfjsfoidsjfo-12o-02ow-0do0fo0
+            </div>
+        </li>
+    </ul>
+</div>

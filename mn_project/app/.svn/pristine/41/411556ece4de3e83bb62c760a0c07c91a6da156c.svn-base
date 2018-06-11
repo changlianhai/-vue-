@@ -1,0 +1,28 @@
+/*hearder*/
+header{
+	position:relative;
+	width:100%;
+	height:55px;
+	line-height:55px;
+	color:#fff;
+	background-color:#53585f;
+	font-size: 1.4rem;
+}
+.highlight{
+	background-color:#333;
+	color:#ffdb43;
+}
+.highlight i{
+	width:36px;
+	height:8px;
+	background-image:url(../../img/ico-btc@1x.png);
+	background-repeat: no-repeat;
+	background-position:right center;
+	background-size:70% auto;
+}
+.address-model-save {
+	float: right;
+	padding-right:1rem;
+	color:#00AFEC;
+	font-size: 1.4rem;
+}

@@ -1,0 +1,38 @@
+<!-- 挖矿中-挖币主界面 -->
+<section class="wrap hl-mn-main">
+	<div class="hl-mn-btc-bg tc w-pad">
+		<div class="btc-ico">
+			<i></i>
+		</div>
+
+		<div class="hl-mn-btc-total">
+			<strong>{{withdraw.unuseIncome}}</strong>
+			<span>BTC</span>
+		</div>
+
+		<div class="mar-b3">我的资产</div>
+		<button class="btn btn-withdraw" type="button" :class="{'disabled':withdraw.getFlagClass}"   onclick="catdv.cardInfo_to_link_withdraw()">提取</button>
+	</div>
+
+	<!-- 列表循环 -->
+	<div class="pos-r bg-wrap bg-white">
+		<div class="mt-loadmore-area"  :class="{'hide':withdraw.profitFlag}">
+			<div class="addup msg bg-muted" :class="{'hide':withdraw.profitFlag}">累计收益：{{mining.data.totalBTC}}&nbsp;BTC</div>
+			<mt-loadmore :top-method="main_top_load" :bottom-method="main_bottom_load" :bottom-all-loaded="mining.data.dayListDataEnd" ref="listLoadmore" :auto-fill="false">
+				<ul class="hl-mn-list-group hl-mn-btc-list btc-list-ico clearfix">
+					<li onclick="catdv.link_details(this)" v-for="(item, index) in mining.dayList.list" :key="index" :id="item.id" :userId="item.userId" :status="item.status" :createTime="item.createTime | showDate" >
+						<i></i>
+						<em>{{item.income | formatSciCount}}&nbsp;&nbsp;BTC</em>
+						<span>{{item.createTime | showDate}}</span>
+					</li>
+				</ul>
+			</mt-loadmore>
+		</div>
+
+		<div class="tc pad-t4" :class="{'hide': mining.data.noBTCClass}">
+			<p class="mar-b1">还没有比特币，当日挖矿次日10点前发放</p>
+			<a onclick="catdv.mn_strategy()">猫盘挖矿攻略&nbsp;></a>
+		</div>
+	</div>
+
+</section>

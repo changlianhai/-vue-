@@ -1,0 +1,205 @@
+/*  收货地址模块样式   */
+#hl_router, #temp_add, #add {
+    height: 100%;
+    /*overflow: hidden;*/
+}
+
+.withdraw-address-model {
+    padding: 1rem 0;
+    background-color: #f0f0f0;
+    height: 100%;
+}
+
+/* .withdraw-address {
+    padding: 1rem;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    border-left: none;
+    border-right: none;
+    letter-spacing: 2px;
+
+}
+
+.withdraw-get-address {
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #00a0e9;
+}*/
+
+/*  提币模块样式   */
+#total {
+    height: 100%;
+    background-color: #F4F4F4;
+}/*
+.hl-withdraw-total-withdraw-model {
+    height: 100%;
+    background-color: #F4F4F4;
+}*/
+.hl-withdraw-total-info {
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-bottom: 1rem solid #F4F4F4;
+    background-color: #fff;
+}
+
+/*.hl-withdraw-total-info-address {
+    padding: .5rem .5rem;
+    background-color: #F7F7F7;
+}
+
+.hl-withdraw-total-info-title {
+    padding: .5rem .5rem;
+}*/
+
+.hl-withdraw-total-info b {
+    font-weight: normal;
+}
+
+.hl-withdraw-total-input-sum {
+    display: flex;
+    display: -webkit-flex;
+    padding: 1rem;
+    background-color: #F7F7F7;
+
+}
+
+/*.hl-withdraw-total-input-sum-info {
+    padding-left: 2rem;
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+
+}
+.hl-withdraw-total-input-sum-all {
+    text-align: right;
+    width:6rem;
+    color: #00a0e9;
+    font-size: 1.4rem;
+}*/
+
+.hl-withdraw-total-info-price {
+    padding-left:.5rem;
+}
+.hl-withdraw-total-info-price span {
+    font-size: 1.4rem;
+}
+
+/*.hl-withdraw-total-withdraw-settings {
+    padding: 4rem 1rem;
+
+}
+.hl-withdraw-total-withdraw-settings-btn {
+    padding:0;
+    display: block;
+    font-size:1.4rem;
+}
+.hl-withdraw-total-beyond {
+    padding-left:.5rem;
+    color:#f00;
+    font-size:1.4rem;
+}*/
+
+
+
+/*  开通成功页面样式 */
+
+.hl-withdraw-open-success-model-tips {
+    padding: 6rem 0;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hl-withdraw-open-success-model-tips-time {
+    padding: 2rem 0;
+    font-size: 1.4rem;
+    color: #666;
+}
+
+.hl-withdraw-open-success-model-cont {
+    padding: 0 1.5rem;
+}
+
+.hl-withdraw-open-success-model-li {
+    padding:1rem 0;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom:1px solid #ccc;
+}
+
+.hl-withdraw-open-success-model-li-key {
+    -webkit-flex-basis: 5rem;
+    flex-basis: 6rem;
+    font-size: 1.4rem;
+    color:#999;
+
+}
+
+.hl-withdraw-open-success-model-li-val {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    text-align: right;
+    font-size: 1.4rem;
+    color:#333;
+
+}
+.hl-withdraw-open-success-model-settings {
+    padding: 4rem 1rem;
+}
+.hl-withdraw-open-success-model-settings-btn {
+    padding:0;
+    display: block;
+    font-size:1.4rem;
+}
+
+
+/*  提币记录模块样式   */
+.hl-withdraw-record-model {
+    position: relative;
+    width:100%;
+    padding:1rem 1.5rem;
+    overflow: scroll;
+}
+.hl-withdraw-record-model-list {
+    border-bottom:1px solid #ccc;
+}
+.hl-withdraw-record-model-list-info {
+    padding:1rem 0 .2rem 0;
+    display: table;
+    width:100%;
+    vertical-align: middle;
+}
+.hl-withdraw-record-model-list-info-tips {
+    display: table-cell;
+    width:12rem;
+    font-size: 1.4rem;
+}
+.hl-withdraw-record-model-list-info-number {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    color: #00a0e9;
+    font-size: 1.6rem;
+}
+.hl-withdraw-record-model-list-info-order {
+    padding:0  0 1rem 0;
+    font-size: 1.4rem;
+}
+.hl-withdraw-record-model-list-info-address {
+    padding-top:.5rem;
+    color:#333;
+    font-size: 1.4rem;
+}
+.hl-withdraw-record-model-list-info-time {
+    color:#999;
+}
+.mt-loadmore-area {
+    height: 100%;
+    overflow: scroll;
+}

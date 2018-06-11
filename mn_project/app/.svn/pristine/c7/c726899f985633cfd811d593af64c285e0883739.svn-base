@@ -1,0 +1,9 @@
+<!-- 挖矿-介绍挖币（开启挖矿） -->
+<section class="w w-pad mar-t5 tc">
+	<h2>共享猫盘存储和带宽挖比特币</h2>
+	<h4 class="mar-t2">⾼收益 × 低耗电 × 低⻔槛</h4>
+	<div class="img-box mar-t3">
+		<img src="img/img-01.jpg">
+	</div>
+	<a class="btn btn-primary" onclick="catdv.to_link_open()"></a>
+</section>

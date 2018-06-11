@@ -1,0 +1,27 @@
+<div :class="{'hide': withdraw.popTipsFlag}">
+    <section class="wrap w-pad">
+        <div class="popup-bg">
+            <div class="popup-dialog">
+                <div class="popup-header">
+                    <h2>提币说明</h2>
+                    <button class="popup-model-close" type="button" onclick="pop_tips_close()">&times;</button>
+                </div>
+                <div class="explain-txt msg">
+                    <p>
+                        <span class="dot"></span>
+                        最小提币数为0.001BTC，我们会对每笔提币额外收取5%的手续费，并且您提币数加上手续费之和需小于可提币的总额，否则系统将优先扣除手续费。
+                    </p>
+                    <p>
+                        <span class="dot"></span>
+                       每台猫盘开启挖矿功能7日内产生的收益无法提取。
+                    </p>
+                    <p>
+                        <span class="dot"></span>
+                        提现申请需经人工审核无误后再进行转账操作，实际到账时间视比特币网络拥堵情况而定，大约需要1~3个工作日。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>

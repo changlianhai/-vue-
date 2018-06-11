@@ -1,0 +1,29 @@
+<!-- 提币-提币详情 -->
+<section class="wrap bg-wrap bg-muted hl-mn-more">
+	<div class="hl-mn-list-group hl-mn-withdraw-list mar-t1 clearfix">
+		<dl>
+			<dt>提币数量</dt>
+			<dd><strong>{{withdraw.recordDetails.money}}</strong>BTC</dd>
+		</dl>
+		<dl>
+			<dt>手续费</dt>
+			<dd>{{withdraw.recordDetails.cost}}&nbsp;BTC</dd>
+		</dl>
+		<dl>
+			<dt>收款地址</dt>
+			<dd>{{withdraw.recordDetails.address | addressFormat}}</dd>
+		</dl>
+		<dl>
+			<dt>创建时间</dt>
+			<dd>{{withdraw.recordDetails.createTime | showDate}}</dd>
+		</dl>
+		<dl>
+			<dt>交易号</dt>
+			<dd>{{withdraw.recordDetails.recordId}}</dd>
+		</dl>
+		<dl>
+			<dt>交易状态</dt>
+			<dd>{{withdraw.recordDetails.status == 0 ? "成功": "失败"}}</dd>
+		</dl>
+	</div>
+</section>

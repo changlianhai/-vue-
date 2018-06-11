@@ -1,0 +1,35 @@
+<!-- 开通挖矿-开通成功 -->
+<div class="open-success-model">
+     <div class="open-success-model-tips">
+            <div>图片</div>
+         <div class="open-success-model-tips-time">实际到账大约需要一个工作日，请注意查收</div>
+     </div>
+    <div class="open-success-model-cont">
+        <ul>
+            <li class="open-success-model-li">
+                <div class="open-success-model-li-key">提币数量</div>
+                <div class="open-success-model-li-val">1.2222223444 BTC</div>
+            </li>
+            <li class="open-success-model-li">
+                <div class="open-success-model-li-key">手续费</div>
+                <div class="open-success-model-li-val">0.0001 BTC</div>
+            </li>
+            <li class="open-success-model-li">
+                <div class="open-success-model-li-key">提币数量</div>
+                <div class="open-success-model-li-val">1LD39efdsjfdsfjdslfdsjf9i20020202lejflsejfisfsi</div>
+            </li>
+            <li class="open-success-model-li">
+                <div class="open-success-model-li-key">创建时间</div>
+                <div class="open-success-model-li-val">2018-05-01 15:16</div>
+            </li>
+            <li class="open-success-model-li">
+                <div class="open-success-model-li-key">交易号</div>
+                <div class="open-success-model-li-val">2029838393039383939039022</div>
+            </li>
+        </ul>
+    </div>
+    <div class="open-success-model-settings ">
+        <div class="btn btn-primary open-success-model-settings-btn">完成</div>
+    </div>
+
+</div>

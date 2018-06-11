@@ -1,0 +1,102 @@
+// ==>> 返回上一个路由对应的页面
+catdv.go_prev_page = function () {
+    catdv.backPage();
+};
+
+
+
+
+/*    -------------------  nav的title处理 start ----------------        */
+//==>> 设置标题
+/**
+ * catdv_set_title: 设置页面的title
+ * @param {{string}} t: 页面中文名
+ * @return  void;
+ */
+// function catdv_set_title (t){
+//     catdv.datas.apd.nav.title=t;
+//     if (t==='收款地址') {
+//         catdv.datas.apd.nav.address_flag = '';
+//     } else {
+//         catdv.datas.apd.nav.address_flag = 'hide';
+//     }
+// }
+/**
+ * catdv_set_title: 设置页面的title
+ * @param {{string}} t: 页面中文名
+ * @return  void;
+ */
+function catdv_set_page_title (modelName){
+    var p=hl_config.page[modelName];
+    var tit=p.tit;
+    catdv.datas.apd.nav.title=tit;
+}
+
+// // ==>>设置和获取收款地址页面
+// catdv.add_init=function(){
+//     catdv_set_title("收款地址");
+// };
+
+// // ==>>提币页面
+// catdv.total_init = function () {
+//     console.log("in add init ... ");
+//     catdv_set_title("提币");
+
+// };
+
+// // ==>>提币成功页面
+// catdv.success_init = function () {
+//     catdv_set_title("提币成功");
+// };
+
+// // ==>>提币记录页面
+// catdv.withdraw_record_init = function () {
+//     catdv_set_title("提币记录");
+// };
+
+// // ==>>更多页面
+// catdv.more_init = function () {
+//     catdv_set_title("更多");
+// };
+
+// // ==>>矿机状态页面
+// catdv.miner_init = function () {
+//     catdv_set_title("矿机状态");
+// };
+
+// // ==>>挖矿中页面
+// catdv.in_init = function (date) {
+//     catdv_set_title("挖矿中");
+// };
+
+// // ==>>挖矿中页面
+// catdv.in_nobtc_init = function () {
+//     catdv_set_title("挖矿中");
+// };
+
+// // ==>>提币记录页面
+// catdv.withdraw_record_init = function () {
+//     catdv_set_title("更多");
+// };
+
+// // ==>>挖矿开启和关闭页面
+// catdv.mining_init = function () {
+//     catdv_set_title("挖矿开启");
+// };
+// // ==>>每天挖矿的详情页面
+// catdv.details_init = function (date) {
+//     date = '5月20日';
+//     catdv_set_title(date + "挖矿详情");
+// };
+
+/*    -------------------  nav的title处理 end ----------------        */
+
+
+catdv.nav_highlight_init=function(a,b){
+    console.log("in nav_highlight_init ... ");
+    catdv_set_page_title(b);
+};
+catdv.nav_init=function(a,b){
+    console.log("in nav_init ... ");
+    catdv_set_page_title(b);
+};

@@ -1,0 +1,174 @@
+/*挖矿中-比特币*/
+#mn_miner,#mn_main,#mn_details{
+	width:100%;
+	height:23rem;
+	background-color:#333;
+	background-image:url(../../img/mining-bg2@3x.jpg);
+	background-repeat:no-repeat;
+	background-size:100% auto;
+}
+#mn_main{
+	height:34rem;
+	background-image:url(../../img/mining-bg1@3x.jpg);
+}
+
+.hl-mn-btc-bg{
+	color:#ffdb43;
+}
+.hl-mn-btc-bg strong{
+	font-size:3.2rem;
+	font-weight:normal;
+	vertical-align:middle;
+}
+.hl-mn-btc-total{
+}
+.hl-mn-btc-total span{
+	margin-left:.5rem;
+	vertical-align:middle;
+}
+
+/*列表样式*/
+.hl-mn-list-group{
+	display:flex;
+	flex-direction:column;
+	word-wrap:break-word;
+	background-color:#fff;
+	background-clip:border-box;
+}
+.hl-mn-list-group li,.hl-mn-list-group dl{
+	position:relative;
+	flex:1 1 100%;
+	width:100%;
+	padding:1.1rem 2rem;
+	border-bottom:1px solid #eee;
+}
+.hl-mn-list-group span{
+	color:#999;
+}
+.hl-mn-list-group .address{
+	font-size:1.2rem;
+}
+.hl-mn-list-group dt{
+	float:left;
+	color:#999;
+}
+.hl-mn-list-group dd{float:right;}
+
+
+/*提币列表*/
+.hl-mn-btc-list span{
+	float:right;
+	font-size:1.2rem;
+	margin-top:3px;
+}
+
+/*详情列表*/
+.hl-mn-more-list a{
+	display: block;
+	color:inherit;
+}
+.hl-mn-details-list i{
+	margin-left:1rem;
+}
+.hl-mn-withdraw-list strong,.record-btc strong{
+	margin-right:.5rem;
+	font-size:1.7rem;
+	font-weight:500;
+}
+.hl-wd-record-list dt,.hl-wd-record-list dd{
+	float:none;
+	color:#333;
+}
+.hl-wd-record-list dt{
+	margin-bottom:1.5rem;
+}
+.record-btc{
+	float:right;
+	color:#00a0e9;
+}
+.success-ico{
+	padding:5rem 2rem;
+}
+
+
+
+/*矿机列表*/
+.hl-mn-miner-list li{
+	padding-top:1.5rem;
+	padding-bottom:1.5rem;
+}
+.hl-mn-miner-list sub{
+	display:inline-block;
+	width:5.5rem;
+	height:2.6rem;
+	margin-left:1rem;
+	color:#999;
+	text-align:center;
+	line-height:2.6rem;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+
+}
+.hl-mn-miner-list sub.active{
+	width:4.5rem;
+	color:#333;
+	background-image:url(../../img/active-bg@3x.png);
+
+}
+.hl-mn-miner-list sub.inactive{
+	background-image:url(../../img/inactive-bg@3x.png);
+
+}
+.hl-mn-miner-list p{
+	margin-top:1rem;
+	color:#999;
+}
+
+/*矿机状态*/
+.hl-mn-miner-state-list{
+	display: flex;
+    flex-flow: row wrap;
+}
+.hl-mn-miner-state-list dl{
+	position:relative;
+	flex: 1 0 0%;
+}
+.hl-mn-miner-state-list dl:after{
+  content: ''; 
+  position: absolute;
+  right:0;
+  top:50%;
+  transform:translate(0,-50%);
+  height: 15px;
+  border-right: 1px solid #999;
+}
+.hl-mn-miner-state-list dl:last-child:after{
+  border-right: 1px solid transparent;
+}
+.hl-mn-miner-state-list dt{
+	font-size:1.7rem;
+}
+.hl-mn-miner-state-list dd{
+	color:#999;
+	font-size:1.2rem;
+}
+
+/*挖矿开关h标签下样式*/
+.hl-mn-h-switch span{
+	display:inline-block;
+	margin:0 .5rem;
+}
+.hl-mn-h-switch i{
+	margin-right:.5rem;
+}
+
+.noActive {
+	color:#00a0e9;
+}
+.mt-loadmore-area {
+	height: 100%;
+	overflow: scroll;
+}
+
+
+

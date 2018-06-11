@@ -1,0 +1,92 @@
+{
+  "data": {
+    "dayIncome":122,
+    "detail": [
+      {
+
+        "catname":"1111",
+        "catspace":433,
+        "cpu":0,
+        "id":7,
+        "income":-1,
+        "netwk":1,
+        "online":-1,
+        "pow":0,
+        "sn":"BHS8H51051000024",
+        "createTime":"2018-05-17",
+        "unused":0,
+        "used":0,
+        "userid":"365d1b669d6146d89446921275a7475e20"
+      },
+      {
+
+        "catname":"1111",
+        "catspace":433,
+        "cpu":0,
+        "id":7,
+        "income":0,
+        "netwk":1,
+        "online":2,
+        "pow":0,
+        "sn":"BHS8H51051000024",
+        "statDate":"2018-05-17",
+        "unused":0,
+        "used":0,
+        "userid":"365d1b669d6146d89446921275a7475e20"
+      },
+      {
+
+        "catname":"1111",
+        "catspace":433,
+        "cpu":0,
+        "id":7,
+        "income":0,
+        "netwk":1,
+        "online":2,
+        "pow":0,
+        "sn":"BHS8H51051000024",
+        "statDate":"2018-05-17",
+        "unused":0,
+        "used":0,
+        "userid":"365d1b669d6146d89446921275a7475e20"
+      },
+      {
+
+        "catname":"1111",
+        "catspace":433,
+        "cpu":0,
+        "id":7,
+        "income":0,
+        "netwk":1,
+        "online":2,
+        "pow":0,
+        "sn":"BHS8H51051000024",
+        "statDate":"2018-05-17",
+        "unused":0,
+        "used":0,
+        "userid":"365d1b669d6146d89446921275a7475e20"
+      },
+      {
+
+        "catname":"1111",
+        "catspace":433,
+        "cpu":0,
+        "id":7,
+        "income":0,
+        "netwk":1,
+        "online":2,
+        "pow":0,
+        "sn":"BHS8H51051000024",
+        "statDate":"2018-05-17",
+        "unused":0,
+        "used":0,
+        "userid":"365d1b669d6146d89446921275a7475e20"
+      }
+
+    ],
+    "totalCount":21
+
+  },
+  "mid": "99999",
+  "result":true
+}

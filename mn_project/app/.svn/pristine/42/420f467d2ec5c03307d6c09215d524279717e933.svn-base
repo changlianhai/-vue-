@@ -1,0 +1,35 @@
+<!-- 矿机-挖矿详情 -->
+<section class="wrap bg-wrap bg-muted hl-mn-details">
+	<div class="hl-mn-btc-bg tc w-pad">
+		<div class="btc-ico pad-tb2">
+			<i></i>
+		</div>
+		<div class="hl-mn-btc-total pad-b3">
+			<strong>0.00123456</strong>
+			<span>BTC</span>
+		</div>
+	</div>
+	<ul class="hl-mn-list-group hl-mn-miner-list mar-t1 clearfix">
+		<li>
+			<h4>
+				<em>猫盘01</em>
+				<sub class="active fr">活跃</sub>
+			</h4>
+			<p>挖币:0.01233336</p>
+		</li>
+		<li>
+			<h4>
+				<em>猫盘02</em>
+				<sub class="inactive fr">不活跃</sub>
+			</h4>
+			<p>挖币:0</p>
+		</li>
+		<li>
+			<h4>
+				<em>猫盘03</em>
+				<sub class="inactive fr">不活跃</sub>
+			</h4>
+			<p>挖币:0</p>
+		</li>
+	</ul>
+</section>

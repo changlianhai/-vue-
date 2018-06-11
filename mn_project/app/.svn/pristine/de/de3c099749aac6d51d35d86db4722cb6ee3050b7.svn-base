@@ -1,0 +1,27 @@
+<!-- 矿机-挖矿详情 -->
+<section class="wrap hl-mn-details mt-loadmore-area">
+	<div class="hl-mn-btc-bg tc w-pad">
+		<div class="btc-ico pad-tb2">
+			<i></i>
+		</div>
+		<div class="hl-mn-btc-total">
+			<strong>{{mining.data.dayIncome}}</strong>
+			<span>BTC</span>
+		</div>
+	</div>
+
+	<div class="mt-loadmore-area bg-wrap bg-muted">
+		<mt-loadmore :top-method="details_top_load" :bottom-method="details_bottom_load" :bottom-all-loaded="listDataEnd" ref="listLoadmore" :auto-fill="false">
+			<ul class="hl-mn-list-group hl-mn-miner-list mar-t1 clearfix">
+				<li v-for="(item, index) of mining.dateDetailsList.list" :key="index" :sn="item.sn">
+					<h4>
+						<em>{{item.catname}}</em>
+						<sub class="fr" :class="item.online > 0 ? 'active':'inactive'">{{item.online | isOnLine}}</sub>
+					</h4>
+					<p>挖币:{{item.income}}</p>
+				</li>
+			</ul>
+		</mt-loadmore>
+	</div>
+
+</section>

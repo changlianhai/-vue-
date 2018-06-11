@@ -1,0 +1,20 @@
+<div class="mt-loadmore-area">
+     <mt-loadmore :top-method="record_top_load" :bottom-method="record_bottom_load" :bottom-all-loaded="listDataEnd" ref="listLoadmore" :auto-fill="false">
+         <div>
+            <ul class="hl-withdraw-record-model" id="recordsContent">
+                <li class="hl-withdraw-record-model-list" v-for="(item, index) in withdraw.records">
+                    <div class="hl-withdraw-record-model-list-info">
+                        <div class="hl-withdraw-record-model-list-info-tips">
+                            <div class="hl-withdraw-record-model-list-info-time">{{item.createtime | showDate}}</div>
+                            <div class="hl-withdraw-record-model-list-info-address">收币地址:</div>
+                        </div>
+                        <div class="hl-withdraw-record-model-list-info-number"> {{item.money}} </div>
+                    </div>
+                    <div class="hl-withdraw-record-model-list-info-order">
+                       {{item.address}}
+                    </div>
+                </li>
+            </ul>
+         </div>
+</mt-loadmore>
+</div>

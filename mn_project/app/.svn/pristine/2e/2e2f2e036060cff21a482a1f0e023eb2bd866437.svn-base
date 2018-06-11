@@ -1,0 +1,5 @@
+<!-- 导航-默认状态 -->
+<header class="tc">
+  <a class="arrow-r"></a>
+  <span>挖矿</span>
+</header>

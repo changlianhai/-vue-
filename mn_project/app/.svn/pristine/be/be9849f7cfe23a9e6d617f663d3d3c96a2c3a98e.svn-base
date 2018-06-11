@@ -1,0 +1,155 @@
+/**可拖拽弹窗样式**/
+.hide {
+	display: none!important;
+}
+.popup-bg{
+	position:fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	display: block;
+	overflow: hidden;
+	outline: 0;
+	width:100%;
+	height:100%;
+	background:rgba(0, 0, 0, 0.5);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4B000000,endColorstr=#4B000000);
+}
+:root .pop-bg{filter:none;}
+.popup-dialog{
+	padding: 1rem 0 2rem 0 ;
+	position:absolute;
+	top:20%;
+	left:50%;
+	width:85%;
+	max-width:30rem;
+	transform:translate(-50%,0);
+	background:#f2f2f3;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  border-radius: .5rem;
+}
+.popup-header{
+  padding:1rem 0;
+  position: relative;
+  text-align: center;
+}
+.popup-model-close {
+  position: absolute;
+  right: 1rem;
+  top:50%;
+  transform: translate(0, -55%);
+  font-size: 2rem;
+}
+.popup-body{
+
+}
+.popup-info {
+   padding: 1rem;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.popup-info-number {
+  color:#333;
+}
+.popup-info-tel {
+	padding-top:1rem;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+.popup-info-tel-check {
+	padding:1rem 0;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	align-items: center;
+}
+.popup-info-tel-check input {
+	text-align: center;
+	width:3rem;
+	height: 3rem;
+	border:1px solid #ccc;
+	text-align: center;
+
+}
+.popup-info-tel-check input:nth-of-type(odd) {
+	border-right: none;
+}
+input.no-right-border {
+	border-right:none;
+}
+.popup-again-send {
+	color: #00AFEC;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  提币弹框  */

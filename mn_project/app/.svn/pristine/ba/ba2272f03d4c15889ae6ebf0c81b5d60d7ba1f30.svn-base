@@ -1,0 +1,24 @@
+
+catdv.address_settings = function () {
+    catdv.datas.apd.withdraw.isAddressFlag = false;
+    catdv.toLink('add');
+};
+
+
+catdv.withdraw_record = function () {
+    catdv.toLink('withdraw_record');
+};
+
+catdv.miner_status = function () {
+    catdv.toLink('miner');
+};
+
+catdv.miner_change = function () {
+    catdv.toLink('miner');
+};
+
+
+
+
+
+

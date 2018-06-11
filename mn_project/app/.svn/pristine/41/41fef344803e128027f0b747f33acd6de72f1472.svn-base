@@ -1,0 +1,38 @@
+// ==>> 返回上一个路由对应的页面
+catdv.go_prev_page = function () {
+    catdv.backPage();
+};
+
+/**
+ * catdv_set_title: 设置页面的title
+ * @param {{string}} modelName: 页面中文名
+ * @return  void;
+ */
+function catdv_set_page_title (modelName, date){
+    var p=hl_config.page[modelName];
+    var tit= p.tit;
+    if (typeof date =='undefined') {
+
+        catdv.datas.apd.nav.title=tit;
+    } else {
+        catdv.datas.apd.nav.title=date + tit;
+    }
+}
+
+
+
+catdv.nav_highlight_init=function(a,b){
+    console.log("in nav_highlight_init ... ");
+//    catdv_set_page_title(b);
+
+   if (b === 'mn_details') {
+       catdv_set_page_title(b, catdv.datas.rVue.history.current.query.date);
+   } else {
+       catdv_set_page_title(b);
+   }
+};
+catdv.nav_init=function(a,b){
+    console.log("in nav_init ... ");
+    catdv_set_page_title(b);
+};
+

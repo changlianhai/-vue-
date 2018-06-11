@@ -1,0 +1,13 @@
+//针对淘宝礼包的独立配置信息
+function catdv_info_init(){
+	catdv.datas.tc="ITOYO";
+	hl_config.url={//注意结尾为'/'，下面的连接就可以不用增加开头的'/'了
+		data:"http://tst.heiluo.com/app/",
+		temp:"http://tst.heiluo.com/app/model/",
+		js:"http://tst.heiluo.com/app/js/",
+		css:"http://tst.heiluo.com/app/css/"
+	};
+    // vue引入mint-ui组件库
+    Vue.use(MINT);
+}
+

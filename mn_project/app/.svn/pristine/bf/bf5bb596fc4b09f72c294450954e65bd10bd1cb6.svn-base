@@ -1,0 +1,66 @@
+// ==>> 返回上一个路由对应的页面
+catdv.go_prev_page = function () {
+    catdv.backPage();
+};
+
+
+
+
+/*    -------------------  nav的title处理 ----------------        */
+//==>> 设置标题
+function catdv_set_title (t){
+    catdv.datas.apd.nav.title=t;
+    if (t==='收款地址') {
+        catdv.datas.apd.nav.address_flag = '';
+    } else {
+        catdv.datas.apd.nav.address_flag = 'hide';
+    }
+}
+
+
+catdv.add_init=function(){
+    catdv_set_title("收款地址");
+};
+
+catdv.total_init = function () {
+    console.log("in add init ... ");
+    catdv_set_title("提币");
+
+};
+
+catdv.success_init = function () {
+    catdv_set_title("提币成功");
+};
+
+catdv.withdraw_record_init = function () {
+    catdv_set_title("提币记录");
+};
+
+catdv.more_init = function () {
+    catdv_set_title("更多");
+};
+
+
+catdv.miner_init = function () {
+    catdv_set_title("矿机状态");
+};
+catdv.in_init = function (date) {
+    catdv_set_title(date + "详情");
+};
+
+catdv.in_nobtc_init = function () {
+    catdv_set_title("挖矿中");
+};
+
+
+catdv.withdraw_record_init = function () {
+    catdv_set_title("更多");
+};
+
+catdv.mining_init = function () {
+
+    catdv_set_title("挖矿开启");
+};
+
+
+

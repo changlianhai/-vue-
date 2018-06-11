@@ -1,0 +1,50 @@
+<!-- 挖矿-介绍挖币（停止挖矿） -->
+<section class="wrap bg-wrap bg-muted">
+	<ul class="details-list more-list mar-t1 clearfix">
+		<li>
+			<a>
+				<label>挖矿开关</label>
+				<div class="fr">
+					<span>已开启</span>
+					<i class="arrow-r"></i>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a>
+				<label>矿机状态</label>
+				<div class="fr">
+					<span>2台</span>
+					<i class="arrow-r"></i>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a>
+				<label>收款地址</label>
+				<div class="fr">
+					<span>1Ks3DAtWY23GT6441gvf</span>
+					<i class="arrow-r"></i>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a>
+				<label>提币记录</label>
+				<div class="fr">
+					<span></span>
+					<i class="arrow-r"></i>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a>
+				<label>挖矿攻略</label>
+				<div class="fr">
+					<span></span>
+					<i class="arrow-r"></i>
+				</div>
+			</a>
+		</li>
+	</ul>
+</section>

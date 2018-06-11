@@ -1,0 +1,29 @@
+<!-- 提币-提币详情 -->
+<section class="wrap bg-wrap bg-muted hl-mn-more">
+	<div class="hl-mn-list-group hl-mn-withdraw-list mar-t1 clearfix">
+		<dl>
+			<dt>提币数量</dt>
+			<dd><strong>1.22345871</strong>BTC</dd>
+		</dl>
+		<dl>
+			<dt>手续费</dt>
+			<dd>0.001&nbsp;BTC</dd>
+		</dl>
+		<dl>
+			<dt>收款地址</dt>
+			<dd class="font12">1LD5Q5D1ndezULaCPgbHDMS8bdxmGX1wWv</dd>
+		</dl>
+		<dl>
+			<dt>创建时间</dt>
+			<dd>2018-05-10&nbsp;&nbsp;15:16:29</dd>
+		</dl>
+		<dl>
+			<dt>交易号</dt>
+			<dd>201805101516295631</dd>
+		</dl>
+		<dl>
+			<dt>交易状态</dt>
+			<dd>提币成功</dd>
+		</dl>
+	</div>
+</section>

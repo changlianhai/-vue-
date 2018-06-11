@@ -1,0 +1,8 @@
+<!-- 导航-高亮状态 -->
+<header class="highlight tc">
+	<a class="arrow-r" onclick="catdv.to_link_mining()"></a>
+	<span>挖矿中</span>
+	<div class="fr mar-r1">
+  		<i></i>
+	</div>
+</header>

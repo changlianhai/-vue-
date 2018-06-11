@@ -1,0 +1,51 @@
+<!-- 矿机-挖矿详情 -->
+<section class="wrap bg-wrap bg-muted hl-mn-details">
+	<div class="hl-mn-btc-bg tc w-pad">
+		<div class="btc-ico pad-tb2">
+			<i></i>
+		</div>
+		<div class="hl-mn-btc-total pad-b3">
+			<strong>{{mining.data.dayIncome}}</strong>
+			<span>BTC</span>
+		</div>
+	</div>
+
+	<div class="mt-loadmore-area">
+		<mt-loadmore :top-method="details_top_load" :bottom-method="details_bottom_load" :bottom-all-loaded="listDataEnd" ref="listLoadmore" :auto-fill="false">
+			<ul class="hl-mn-list-group hl-mn-miner-list mar-t1 clearfix">
+				<li v-for="(item, index) of mining.dateDetailsList" :key="index" :sn="item.sn">
+					<h5>
+						<span>{{item.catname}}</span>
+						<span class="text-info fr" :class="item.online ===1 ? 'active':'noActive'">{{item.online | isOnLine}}</span>
+					</h5>
+					<p class="mar-t1">挖币{{item.income | SecCount}}</p>
+				</li>
+			</ul>
+		</mt-loadmore>
+	</div>
+
+	<ul class="hl-mn-list-group hl-mn-miner-list mar-t1 clearfix">
+		<li>
+			<h4>
+				<em>猫盘01</em>
+				<sub class="active fr">活跃</sub>
+			</h4>
+			<p>挖币:0.01233336</p>
+		</li>
+		<li>
+			<h4>
+				<em>猫盘02</em>
+				<sub class="inactive fr">不活跃</sub>
+			</h4>
+			<p>挖币:0</p>
+		</li>
+		<li>
+			<h4>
+				<em>猫盘03</em>
+				<sub class="inactive fr">不活跃</sub>
+			</h4>
+			<p>挖币:0</p>
+		</li>
+	</ul>
+
+</section>

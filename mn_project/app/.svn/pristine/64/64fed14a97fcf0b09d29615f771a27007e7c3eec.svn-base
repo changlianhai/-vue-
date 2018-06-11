@@ -1,0 +1,14 @@
+<!-- 挖矿中-挖币主界面 -->
+<section class="wrap hl-mn-main">
+	<div class="hl-mn-btc-bg tc w-pad">
+		<div class="btc-ico pad-tb2">
+			<i></i>
+		</div>
+		<div class="hl-mn-btc-total">
+			<strong>1.00123456</strong>
+			<span>BTC</span>
+		</div>
+		<div class="mar-b3">总比特币</div>
+		<button class="btn btn-warning disabled mar-b3" type="button" onclick="cardInfo_to_link_withdraw()">提取</button>
+	</div>
+</section>

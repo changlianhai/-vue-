@@ -1,0 +1,34 @@
+<!-- 弹窗-提取金额 -->
+<div>
+<div v-bind:class="withdraw.popUpClassFlag">
+	<section class="wrap w-pad">
+		<div class="popup-bg">
+			<div class="popup-dialog">
+				<div class="popup-header">
+					<button type="button" class="close">
+						<h3>请输入验证码</h3>
+						<span class="popup-model-close" onclick="withdraw_close_popUp()">&times;</span>
+					</button>
+				</div>
+				<div class="popup-info">
+					<div>提币</div>
+					<div class="popup-info-number">8.9383838383 BTC</div>
+				</div>
+				<div class="popup-info-tel">
+				    <div v-if="withdraw.withdrawTipsFlag">验证码已发送到: +86 <span>{{mining.data.phone}}</span></div>
+					<div v-else><span>验证码错误,</span><span class="popup-again-send" onclick="popup_send()">重新发送</span></div>
+					<div class="popup-info-tel-check" id="checkInpt">
+						<input type="number"  autofocus="autofocus">
+						<input type="number" class="no-right-border">
+						<input type="number">
+						<input type="number" class="no-right-border">
+						<input type="number">
+						<input type="number" oninput="withdraw_go_details(this)">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</div>
+</div>

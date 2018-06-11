@@ -1,0 +1,246 @@
+/*   本JS文件，是挖矿模块的交互   */
+
+
+/* --------------- more更多页面跳转  start--------------*/
+// ===>> 矿机数量
+catdv.miner_status = function () {
+    catdv.toLink('mn_miner');
+};
+
+
+// ===>> 收款地址
+catdv.address_settings = function () {
+    catdv.datas.apd.withdraw.isAddressFlag = false;
+    catdv.toLink('mn_set_addr',  {saveFlag: 1});
+};
+
+// ===>> 提币记录
+catdv.withdraw_record = function (e) {
+    catdv.toLink('wd_logs');
+};
+
+
+// ===>> 挖矿攻略
+catdv.link_withdraw_add = function () {
+    catdv.toLink('');
+};
+
+catdv.add_init = function () {
+     var saveFlag = catdv.datas.rVue.history.current.query.saveFlag;
+     saveFlag == 1 ?  catdv.datas.apd.nav.address_flag = '': null;
+};
+
+/* --------------- more更多页面跳转  end-------------*/
+
+
+// ===>>挖矿中页面头部，三个点挑战到更多页面
+catdv.link_more = function () {
+    catdv.toLink('mn_set');
+};
+
+
+// == >> 进入指定日期的挖币详情页(依据日期进行查询)
+catdv.link_details = function (_this) {
+    var date = _this.getAttribute('createtime');
+    date = date.split(' ')[0];
+    console.log(date);
+    catdv.toLink('mn_details', {date: date});
+};
+
+
+
+
+
+
+// ===>> 挖矿模块加载完毕，挖矿列表数据获取和绑定
+catdv.main_init = function () {
+    console.log('enter============>>');
+    getDugMoneyDetails();
+    getUserBaseInfo();
+};
+
+/**
+ *  矿机的基本信息 (数量， 总比特币，收货地址,等其他信息)
+ */
+catdv.mn_top_load = function () {
+    console.log('mn_top_load');
+};
+
+catdv.mn_bottom_load = function () {
+    console.log('mn_bottom_load');
+};
+
+
+
+
+function getUserBaseInfo() {
+    var paramObj = {};
+    paramObj.session = "365d1b669d6146d896921275a7475e201111";
+    paramObj.mid = "801001001";
+    paramObj.method = "account_detail";
+    catdv.ajax.postJsonForm('http://maopan.gsie.cn/cat',JSON.stringify(paramObj), function (res) {
+        if (res.data && res.data.result) {
+            var mining = catdv.datas.apd.mining.data;
+            var getMining = res.data.data.account;
+            // 设置数据，保存到数据池
+            catdv.setData('', 'mining.data.address', getMining.address);        //收获地址
+            catdv.setData('', 'mining.data.totalBTC',getMining.totalIncome);    //总比特币数量
+            catdv.setData('', 'mining.data.userId', getMining.userId);          //用户的id
+            catdv.setData('', 'mining.data.id', getMining.id);                  // id
+            catdv.setData('', 'mining.data.createTime',getMining.createTime);   //创建时间
+            catdv.setData('', 'mining.data.modifyTime',getMining.modifyTime);   //修改时间
+            catdv.setData('', 'withdraw.useIncome', getMining.useIncome);       //可用比特币(可提取)
+            catdv.setData('', 'withdraw.unuseIncome',  getMining.unuseIncome);  //已提取的比特币
+        } else {//错误判断
+            MINT.Toast(res.data.error.msg);
+        }
+    });
+}
+
+/**
+ * 挖矿中，挖矿列表数据
+ */
+function getDugMoneyDetails() {
+    var paramObj = {};
+    paramObj.session = "365d1b669d6146d896921275a7475e201111";
+    paramObj.mid = "801001001";
+    paramObj.method = "summary";
+    paramObj.params = {
+      pageNo:1,
+      pageSize:10
+    };
+    catdv.ajax.postJsonForm('http://maopan.gsie.cn/cat',JSON.stringify(paramObj), function (res) {
+        if (res.data && res.data.result) {
+            var mining = catdv.datas.apd.mining.data;
+            var getMining = res.data.data.account;
+            //===>> 挖矿中，列表数据
+            if (res.data.data.detail.length === 0) {
+                mining.noBTCClass = '';
+            } else {
+                catdv.setData('', 'mining', res.data.data.detail); //有数据放到数据次里面
+            }
+        } else {//错误判断
+            MINT.Toast(res.data.error.msg);
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 设置页面;
+catdv.more_init = function () {
+
+};
+
+
+
+// 矿机管理模块 (没有分页哦)
+catdv.miner_init = function () {
+    var paramObj = {
+        method: 'cat_manager',
+        session: "5614564151454",
+        mid: "202020020",
+        params: {}
+    };
+    // ==>> 调用ajax 进行判断
+    catdv.ajax.postJsonForm('http://maopan.gsie.cn/cat', JSON.stringify(paramObj), function (res) {
+        var noActive = '-';
+        if (res.data && res.data.result) {
+            catdv.setData('', 'mining.data.isActive', res.data.data.isActive);             //猫盘活跃数量
+            catdv.setData('', 'mining.data.totalCount', res.data.data.totalCount);         //猫盘总个数
+           // catdv.setData('', 'mining.data.minerStatus', res.data.data.catIfno);           //矿机管理类列表
+
+            //==>> 不活跃数量处理
+            if (typeof res.data.data.totalCount === 'number' && typeof res.data.data.isActive === 'number') {
+                noActive =  res.data.data.totalCount - res.data.data.isActive;
+                catdv.setData('', 'mining.data.noActive',noActive);
+            }
+
+            if (typeof res.data.data.totalCount === 'number' && typeof res.data.data.isActive === 'string') {
+                catdv.setData('', 'mining.data.noActive', res.data.data.totalCount);
+            }
+
+
+
+
+        } else {//错误判断
+            MINT.Toast(res.data.error.msg);
+        }
+    });
+};
+
+
+
+
+
+
+
+// ==>>每日挖币详情
+// catdv.details_init = function () {
+//     debugger
+//     //提示用户，正在发送验证码
+//     MINT.Indicator.open({
+//         text: "数据获取中...",
+//         spinnerType: "fading-circle"
+//     });
+//
+//
+//     var date = catdv.datas.rVue.history.current.query.date;
+//     var paramObj = {};
+//     paramObj.session = "365d1b669d6146d896921275a7475e201111";  //用户唯一标识
+//     paramObj.mid = "801001001";    //消息码
+//     paramObj.method = "day_detail";  // 方法名
+//     paramObj.params = {
+//         statDate: date,
+//         page:1,
+//         size:10
+//     };
+//
+//
+//     catdv.ajax.postJsonForm('http://maopan.gsie.cn/cat', JSON.stringify(paramObj), function (res) {
+//         MINT.Indicator.close();
+//         if (res.data && res.data.result) {
+//             catdv.setData('', 'mining.data.dayIncome', res.data.data.dayIncome);     //重绘收获地址
+//             catdv.datas.apd.nav.address_flag = 'hide';
+//         } else {   // 错误提示用户
+//             MINT.Toast(res.data.error.msg);
+//         }
+//     });
+// };
+
+
+
+
+
+/*  某天挖矿详情列表  start */
+catdv.details_init = function () {
+
+  console.log('=======>>111111');
+};
+
+catdv.details_top_load = function () {
+    console.log('top');
+};
+
+
+catdv.details_bottom_load = function () {
+    console.log('bottom');
+};
+
+
+/*  某天挖矿详情列表  end */
+
+
+

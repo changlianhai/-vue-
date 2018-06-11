@@ -1,0 +1,72 @@
+{
+  "data": {
+    "dayIncome":122,
+    "detail": [
+      {
+        "catname": "猫盘1",
+        "catspace": 3500,
+        "cpu": 0,
+        "id": 8,
+        "income": 1E-8,
+        "netwk": 6,
+        "online": -1,
+        "pow": 0,
+        "sn": "C1CB2CUV43GHEOXJ",
+        "statDate": "2018-05-17",
+        "unused": 0,
+        "used": 0,
+        "userid": "365d1b669d6146d89446921275a7475e20"
+      },
+      {
+        "catname": "猫盘2",
+        "catspace": 3500,
+        "cpu": 0,
+        "id": 8,
+        "income": 2.1111,
+        "netwk": 6,
+        "online": 2,
+        "pow": 0,
+        "sn": "C1CB2CUV43GHEOXJ",
+        "statDate": "2018-05-17",
+        "unused": 0,
+        "used": 0,
+        "userid": "365d1b669d6146d89446921275a7475e20"
+      },
+      {
+        "catname": "测试猫盘1",
+        "catspace": 3500,
+        "cpu": 0,
+        "id": 8,
+        "income": 3E-8,
+        "netwk": 6,
+        "online": -1,
+        "pow": 0,
+        "sn": "C1CB2CUV43GHEOXJ",
+        "statDate": "2018-05-17",
+        "unused": 0,
+        "used": 0,
+        "userid": "365d1b669d6146d89446921275a7475e20"
+      },
+      {
+        "catname": "测试猫盘1",
+        "catspace": 3500,
+        "cpu": 0,
+        "id": 8,
+        "income": 42E-3,
+        "netwk": 6,
+        "online": 1,
+        "pow": 0,
+        "sn": "C1CB2CUV43GHEOXJ",
+        "statDate": "2018-05-17",
+        "unused": 0,
+        "used": 0,
+        "userid": "365d1b669d6146d89446921275a7475e20"
+      }
+
+    ],
+    "totalCount":21
+
+  },
+  "mid": "99999",
+  "result":true
+}

@@ -1,0 +1,89 @@
+/*挖矿中-比特币*/
+.btc-bg{
+	color:#ffdb43;
+	background-color:#333;
+}
+.btc-bg strong{
+	font-size:2rem;
+	font-weight:normal;
+}
+
+/*列表样式*/
+.list-group{
+	display:flex;
+	flex-direction:column;
+	word-wrap:break-word;
+	background-color:#fff;
+	background-clip:border-box;
+}
+.list-group li{
+	position:relative;
+	flex:1 1 100%;
+	width:100%;
+	padding:1rem;
+	border-bottom:1px solid #eee;
+}
+
+/*提币列表*/
+.btc-list span{
+	float:right;
+	color:#999;
+}
+
+/*详情列表*/
+.more-list a{
+	display: block;
+	color:inherit;
+}
+.details-list span{
+	color:#999;
+}
+.details-list i{
+	margin-right:1rem;
+	margin-left:.5rem;
+}
+/*矿机列表*/
+.miner-list small{
+	margin-left:.5rem;
+}
+
+/*矿机状态*/
+.miner-state-list{
+	display: flex;
+    flex-flow: row wrap;
+}
+.miner-state-list dl{
+	position:relative;
+	flex: 1 0 0%;
+}
+.miner-state-list dl:after{
+  content: ''; 
+  position: absolute;
+  right:0;
+  top:50%;
+  transform:translate(0,-50%);
+  height: 15px;
+  border-right: 1px solid #999;
+}
+.miner-state-list dl:last-child:after{
+  border-right: 1px solid transparent;
+}
+.miner-state-list dt{
+	font-size:1.6rem;
+}
+.miner-state-list dd{
+	color:#999;
+}
+
+/*挖矿开关h标签下样式*/
+.h-switch span{
+	display:inline-block;
+	margin:0 .5rem;
+}
+.h-switch i{
+	margin-right:.5rem;
+}
+
+
+
+

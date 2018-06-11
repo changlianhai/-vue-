@@ -1,0 +1,11 @@
+<!-- 提币-比特币总数 -->
+<section class="wrap w-pad mar-t2">
+	<div class="mar-b1">
+		可提取⽐比特币：8.9989
+		<a class="mar-l1" onclick="">全部提取</a>
+	</div>
+	<div class="text-muted">
+		总⽐比特币：8.9989
+		<span class="mar-l1">当⽇挖矿7⽇日后解锁</span>
+	</div>
+</section>>

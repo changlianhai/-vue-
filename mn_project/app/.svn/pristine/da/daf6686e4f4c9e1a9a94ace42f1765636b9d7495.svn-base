@@ -1,0 +1,35 @@
+<!-- 提币-成功 -->
+<section class="wrap hl-wd-success">
+    <div class="success-ico tc">
+        <i></i>
+        <p class="text-muted">实际到账大约需要一个工作日，请注意查收</p>
+    </div>
+    <div class="hl-mn-list-group hl-mn-withdraw-list">
+        <dl>
+            <dt>提币数量</dt>
+            <dd>
+                <strong>{{withdraw.useIncome}}</strong>BTC
+            </dd>
+        </dl>
+        <dl>
+            <dt>手续费</dt>
+            <dd>{{withdraw.cost}}</dd>
+        </dl>
+        <dl>
+            <dt>收款地址</dt>
+            <dd>{{mining.data.address}}</dd>
+        </dl>
+        <dl>
+            <dt>创建时间</dt>
+            <dd>{{mining.data.createTime | showDate}}</dd>
+        </dl>
+        <dl>
+            <dt>交易号</dt>
+            <dd>{{withdraw.recordId}}</dd>
+        </dl>
+    </div>
+    <div class="w-pad wd-btn-box">
+        <button class="btn btn-primary btn-block" onclick="catdv.success()" type="button">完成</button>
+    </div>
+
+</section>

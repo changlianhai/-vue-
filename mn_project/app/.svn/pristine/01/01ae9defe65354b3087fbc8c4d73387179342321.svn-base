@@ -1,0 +1,5 @@
+<!-- 提币-设置比特币地址 -->
+<div  onclick="" class="withdraw-address-model">
+    <input type="text" class="input-large withdraw-address" placeholder="请输入您的比特币地址" v-model="mining.data.address" />
+    <div class="withdraw-get-address" onclick="catdv.add_get_addresss()">获取比特币的地址</div>
+</div>

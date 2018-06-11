@@ -1,0 +1,29 @@
+<!-- 提币-比特币总数 -->
+<section class="wrap bg-wrap bg-muted hl-form-group">
+	<dl>
+		<dt>收款地址</dt>
+		<dd class="dd-bg">{{mining.data.address}}&nbsp;</dd>
+	</dl>
+
+	<dl>
+		<dt>
+			<span >可提币数量：{{ withdraw.unuseIncome }}</span>
+			<small>(当挖矿7日后解锁)</small>
+			<small onclick="pop_tips()">详情</small>
+		</dt>
+		<dd class="dd-bg">
+			<i></i>
+			<input  onKeypress="this.value=this.value.replace(/[^0-9.]/g, '')"  class="form-control hl-withdraw-inp" type="number" placeholder="输入提币数量" v-model.number="withdraw.useIncome" onfocus="user_ipt()" onkeyup="calculation_cost()" />
+			<a class="fr" onclick="total_get_sure_withdraw_all()">全部提取</a>
+		</dd>
+		<dd class="hl-withdraw-total-info-price">
+			<small v-if="withdraw.tipsFlag">手续费 {{withdraw.cost}} BTC (费率5%)</small>
+			<small class="text-danger" v-else>输入数量超过总量</small>
+		</dd>
+	</dl>
+	<div class="w-pad wd-btn-box">
+		<button class="btn btn-primary btn-block" onclick="catdv.withdraw_start()" type="button">提取</button>
+	</div>
+</section>
+
+

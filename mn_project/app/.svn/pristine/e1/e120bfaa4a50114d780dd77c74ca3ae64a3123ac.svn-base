@@ -1,0 +1,319 @@
+//配置类属性，通用url前缀
+const hl_config={
+	debug:1,
+	de_data:{
+//		list:1,
+//		info:1
+	},
+	homepage:"in",
+	url:{},//主要url
+	tmp:{},//已经加载过的模版
+	router:{},//路由
+	model:{},//模块
+	temp:{},//模板
+	jsl:{},//已经被动态加载的js文件
+	cssl:{},//已经被动态加载的css文件
+	comp:{},//已经加载过的子模块
+	tmp:{},//临时对象
+	suf:{
+		temp:'.html',
+		data:'.shtml',
+		js:'.js',
+		css:'.css'
+	},
+	//功能页面
+	page:{//项目相关独立页面
+		nav:{
+			main:"nav",
+			tit:"",
+			chr:["nav"]
+		},
+		nav_highlight:{
+			main:"nav_highlight",
+			tit:"",
+			chr:["nav_highlight"]
+		},
+		mn_amount:{
+			main:"amount",
+			tit:"",
+			chr:["amount"]
+		},
+		mn_code:{
+			main:"code",
+			tit:"",
+			chr:["code"]
+		},
+		mn_mining:{
+			main:"mining",
+			tit:"挖矿",
+			chr:["nav","mining"]
+		},
+		mn_open:{
+			main:"open",
+			tit:"开通挖矿",
+			chr:["nav","open"]
+		},
+		mn_open_success:{
+			main:"open_success",
+			tit:"开通成功",
+			chr:["nav","open_success"]
+		},
+		mn_open_fail:{
+			main:"open_fail",
+			tit:"开通失败",
+			chr:["nav","open_fail"]
+		},
+		mn_upgrade:{
+			main:"upgrade",
+			tit:"升级ROM",
+			chr:["nav","upgrade"]
+		},
+		in:{
+			main:"in",
+			tit:"挖矿中",
+			chr:["nav_highlight","in"]
+		},
+		in_nobtc:{
+			main:"in_nobtc",
+			tit:"挖矿中",
+			chr:["nav_highlight","in_nobtc"]
+		},
+		mn_miner:{
+			main:"miner",
+			tit:"矿机状态",
+			chr:["nav_highlight","miner"]
+		},
+		mn_details:{
+			main:"details",
+			tit:"设置",
+			chr:["nav_highlight","details"]
+		},
+		mn_more:{
+			main:"more",
+			tit:"更多",
+			chr:["nav","more"]
+		},
+		wd_add:{
+			main:"add",
+			tit:"收款地址",
+			chr:["nav","add"]
+		},
+		wd_total:{
+			main:"total",
+			tit:"提币",
+			chr:["nav","total", "amount"]
+		},
+		wd_info:{
+			main:"info",
+			tit:"提币",
+			chr:["nav","info","code"]
+		},
+		wd_success:{
+			main:"success",
+			tit:"提币成功",
+			chr:["nav","success"]
+		},
+        wd_record: {
+			main:'record',
+			tit:"提币记录",
+            chr:["nav", "record" ]
+		}
+		// home:{//主页
+		// 	main:"colNews",
+		// 	tit:"新闻列表",
+		// 	chr:["colNews"],
+		// 	isNoLogin:true
+		// },
+		// recNews:{//推荐的新闻列表
+		// 	main:"recNews",
+		// 	tit:"推荐新闻",
+		// 	chr:["recNews"],
+		// 	isNoLogin:true
+		// },
+		// newsInfo:{//推荐礼包
+		// 	main:"newsInfo",
+		// 	tit:"新闻详情",
+		// 	chr:["newsInfo"],
+		// 	isNoLogin:true
+		// },
+		// gameInfo:{//游戏信息
+		// 	main:"gameInfo",
+		// 	tit:"游戏信息",
+		// 	chr:["gameInfo"],
+		// 	isNoLogin:true
+		// }
+	},//以上每新增页面，需要到by_share中增加对应的分享数据处理方法
+	// 页面模板路由
+	pModule:{//页面中的模块，不同页面可用相同模块
+		nav:{
+			url:"nav/nav",
+			js:"tolink/tolink",
+			css:["common/common","nav/nav","common/ico"]
+		},
+		nav_highlight:{
+			url:"nav/nav_highlight",
+			js:["tolink/tolink","nav/nav"],
+			css:["common/common","nav/nav","common/ico"]
+		},
+		amount:{
+			url:"popup/amount",
+			js:"",
+			css:["common/common","common/forms","popup/popup"]
+		},
+			code:{
+			url:"popup/code",
+			js:"",
+			css:["common/common","common/forms","popup/popup"]
+		},
+        details:{
+			url:"mining/mining",
+			js:"mining/mining",
+			css:["common/common","nav/nav","common/forms","mining/mining"]
+		},
+		open:{
+			url:"mining/open",
+			js:"mining/open",
+			css:["common/common","nav/nav","common/forms"]
+		},
+		open_success:{
+			url:"mining/open_success",
+			js:"",
+			css:["common/common","nav/nav","common/forms","common/ico", "mining/open_success"]
+		},
+		open_fail:{
+			url:"mining/open_fail",
+			js:"",
+			css:["common/common","nav/nav","common/forms","common/ico"]
+		},
+		upgrade:{
+			url:"mining/upgrade",
+			js:"",
+			css:["common/common","nav/nav","common/forms"]
+		},
+		in:{
+			url:"mining/in",
+			js:"mining/mining",
+			css:["common/common","nav/nav","common/forms","common/ico","mining/mining"]
+		},
+		in_nobtc:{
+			url:"mining/in_nobtc",
+			js:["withdraw/withdraw"],
+			css:["common/common","nav/nav","common/forms","common/ico","mining/mining"]
+		},
+		miner:{
+			url:"mining/miner",
+			js:"",
+			css:["common/common","nav/nav","common/forms","mining/mining"]
+		},
+		details:{
+			url:"mining/details",
+			js:"",
+			css:["common/common","nav/nav","common/forms","mining/mining"]
+		},
+		more:{
+			url:"mining/more",
+			js:["mining/mining", 'nav/nav'],
+			css:["common/common","nav/nav","common/forms","mining/mining"]
+		},
+		add:{
+			url:"withdraw/add",
+			js:["withdraw/withdraw", 'nav/nav'],
+			css:["common/common","common/forms", "withdraw/withdraw"]
+		},
+		total:{
+			url:"withdraw/total",
+			js:["withdraw/withdraw","nav/nav"],
+			css:["common/common","nav/nav","common/forms","popup/popup", "withdraw/withdraw"]
+		},
+		info:{
+			url:"withdraw/info",
+			js:"",
+			css:["common/common","nav/nav","common/forms","popup/popup"]
+		},
+		success:{
+			url:"withdraw/success",
+			js:["withdraw/withdraw","nav/nav"],
+			css:["common/common","nav/nav","common/forms","common/ico", "withdraw/withdraw"]
+		},
+		record:{
+            url:"withdraw/record",
+            js:["withdraw/withdraw"],
+            css:["common/common", "withdraw/withdraw"]
+		},
+		// colNews:{//新闻列表
+		// 	url:"news/clist",
+		// 	js:"news/news",
+		// 	css:["news/news","font","gener"],
+		// 	data:"colNews",
+		// 	comp:"newsItem",
+		// 	isList:true
+		// },
+		// recNews:{//新闻列表
+		// 	url:"news/rlist",
+		// 	js:"news/news",
+		// 	css:["news/news","font","gener"],
+		// 	data:"recNews",
+		// 	comp:"newsItem",
+		// 	isList:true
+		// },
+		// newsInfo:{//新闻内容
+		// 	url:"news/info",
+		// 	js:"news/news",
+		// 	css:["news/news","font","gener"],
+		// 	data:"newsInfo"
+		// },
+		// gameInfo:{//游戏信息
+		// 	url:"game/info",
+		// 	js:"game/game",
+		// 	css:["game/game"]
+		// },
+        mining: {
+            url:"mining/mining",
+            js:["mining/mining"],
+            css:["common/common", "mining/mining"]
+		}
+	},
+	// 数据目标
+	// 属性解析：
+	// s:所在页数；p:每页数据量;
+	pData:{//模块初始化所相关主动数据请求，不同模块可相关相同数据请求
+		// colNews:{
+		// 	url:"col/newsDatas",
+		// 	meth:"get",
+		// 	dtg:"clist",
+		// 	param:{
+		// 		w:"w",
+		// 		s:"s",
+		// 		p:"p"
+		// 	}
+		// },
+		// recNews:{
+		// 	url:"col/recNews",
+		// 	meth:"get",
+		// 	dtg:"rlist",
+		// 	param:{
+		// 		w:"w",
+		// 		s:"s",
+		// 		p:"p"
+		// 	}
+		// },
+		// newsInfo:{
+		// 	url:"col/newsData",
+		// 	meth:"get",
+		// 	dtg:"ninfo",
+		// 	param:{
+		// 		id:"id"
+		// 	}
+		// }
+	},
+	pComp:{//子模块，不同模块可调用相同子模块，同一子模块可对应不同数据请求，但需要保证返回数据的字段匹配性
+		// newsItem:{
+		// 	tn:"news_item",
+		// 	url:"news/ndata",
+		// 	js:"news/news",
+		// 	css:"news/news"
+		// }
+	},
+	pMenu:{//页面相关菜单，不同页面可调用相同菜单
+	}
+};

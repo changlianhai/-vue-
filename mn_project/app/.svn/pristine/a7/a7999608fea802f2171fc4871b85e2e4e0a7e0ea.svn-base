@@ -1,0 +1,96 @@
+/*  收货地址模块样式   */
+#hl_router, #temp_add, #add {
+    height: 100%;
+    overflow: hidden;
+}
+
+.withdraw-address-model {
+    padding: 1rem 0;
+    background-color: #f0f0f0;
+    height: 100%;
+}
+
+.withdraw-address {
+    padding: 1rem;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    border-left: none;
+    border-right: none;
+    letter-spacing: 2px;
+
+}
+
+.withdraw-get-address {
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #00AFEC;
+}
+
+/*  提币模块样式   */
+#total {
+    height: 100%;
+    background-color: #F4F4F4;
+}
+.total-withdraw-model {
+    height: 100%;
+    background-color: #F4F4F4;
+}
+.total-info {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 1rem solid #F4F4F4;
+    background-color: #fff;
+}
+
+.total-info-address {
+    padding: .5rem .5rem;
+    background-color: #F7F7F7;
+}
+
+.total-info-title {
+    padding: .5rem .5rem;
+}
+
+.total-info b {
+    font-weight: normal;
+}
+
+.total-input-sum {
+    display: flex;
+    display: -webkit-flex;
+    padding: 1rem;
+    background-color: #F7F7F7;
+
+}
+
+.total-input-sum-info {
+    padding-left: 2rem;
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+
+}
+.total-input-sum-all {
+    text-align: right;
+    width:6rem;
+    color: #00AFEC;
+    font-size: 1.2rem;
+}
+
+.total-info-price {
+    padding-left:.5rem;
+}
+.total-info-price span {
+    font-size: 1.1rem;
+}
+
+.total-withdraw-settings {
+    padding: 4rem 1rem;
+
+}
+.total-withdraw-settings-btn {
+    padding:0;
+    display: block;
+    font-size:1.2rem;
+}

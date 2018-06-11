@@ -1,0 +1,142 @@
+/* 本JS控制提币的流程，  提币 ---设置地址，获取地址--输入提币数量 ---提币成功 提币记录  */
+
+
+
+
+
+/*  挖矿详情页，提币按钮进行提币   */
+var cardInfo_to_link_withdraw = function () {
+    var address = catdv.datas.apd.mining.data.address;
+     // ==>> 没有地址跳转到输入地址页面
+    if (address.length === 0) {
+        catdv.toLink('mn_set_addr');
+        catdv.datas.apd.nav.address_flag = '';
+    } else {  // ==>> 有地址直接跳转到提取页面
+        catdv.toLink('wd_from');
+        catdv.datas.apd.nav.address_flag = 'hide';
+
+    }
+
+};
+
+
+
+/* 收货地址页面 */
+// ==>> 设置地址保存成功
+var address_model_save = function () {
+    var address = catdv.datas.apd.mining.data.address;
+    if (address.length ===0) {
+        MINT.Toast({
+            message: '比特币地址不能为空，请输入',
+            duration: 1000
+        });
+        return;
+    } else {
+        // ===>> ajax进行判断 (***)
+        MINT.Toast({
+            message: '设置地址成功',
+            duration: 1000
+        });
+    }
+
+    setTimeout(function () {
+        var isAddressFlag = catdv.datas.apd.withdraw.isAddressFlag;
+
+        catdv.toLink('wd_from');
+
+    },1200);
+
+};
+catdv.add_get_addresss = function () {
+    // ===>> Ajax 获取数据(***)
+    catdv.datas.apd.mining.data.address = '河北省张家口市'
+};
+
+
+/*  提币用户输入页面 */
+
+//==>>弹框出来
+var withdraw_start = function () {
+    var price = catdv.datas.apd.withdraw.extractAll;
+
+    if (price.length===0) {
+        MINT.Toast('提币数量不能为空，请输入');
+        return;
+    }
+    if (!window.Number(price)) {
+        MINT.Toast({
+            message: '提币数量格式不正确，请重新重新输入',
+            duration: 600
+        });
+        window.setTimeout(function () {
+            catdv.datas.apd.withdraw.extractAll = '';
+        }, 1000);
+        return;
+    }
+
+    catdv.datas.apd.withdraw.popUpClassFlag = '';
+
+
+    // ==>> 控制手机验证码失去焦点
+    var txts = document.getElementById('checkInpt').getElementsByTagName("input");
+    for(var i = 0; i<txts.length;i++){
+        var t = txts[i];
+        t.index = i;
+        t.setAttribute("readonly", true);
+        t.onkeyup=function(){
+            this.value=this.value.replace(/^(.).*$/,'$1');
+            var next = this.index + 1;
+            if(next > txts.length - 1) return;
+            txts[next].removeAttribute("readonly");
+            txts[next].focus();
+        }
+    }
+    txts[0].removeAttribute("readonly");
+};
+// ==>>弹框关闭
+var withdraw_close_popUp = function () {
+    catdv.datas.apd.withdraw.popUpClassFlag = 'hide';
+
+};
+//==>>提币成功, 进入详情页面
+var withdraw_go_details = function (_this) {
+    if (_this.value.length === 1)  {
+
+        catdv.datas.apd.withdraw.popUpFlag = 'hide';
+        //MINT.Indicator.open('校验中，请稍后');
+
+        // ==>> 调用ajax 进行判断
+        //debugger
+       // MINT.Indicator.close();
+       // return;
+        MINT.Toast({
+            message: '操作成功',
+            iconClass: 'icon icon-success'
+        });
+
+        //return;
+      setTimeout(function () {
+          catdv.datas.apd.withdraw.popUpFlag = 'hide';
+          catdv.toLink('wd_succ');
+      },2000);
+    }
+
+};
+
+
+var total_get_sure_withdraw_all = function () {
+    catdv.datas.apd.withdraw.extractAll = catdv.datas.apd.withdraw.sureExtractNum;
+};
+
+
+catdv.success = function () {
+    catdv.toLink('mn_main');
+};
+
+
+
+
+
+
+
+

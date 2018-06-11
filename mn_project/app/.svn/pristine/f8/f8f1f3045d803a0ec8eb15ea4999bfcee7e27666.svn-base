@@ -1,0 +1,7 @@
+catdv.to_link_tst1=function(){
+    catdv.toLink("tst");
+};
+
+catdv.to_link_tst2=function(){
+    catdv.toLink("tst2");
+}

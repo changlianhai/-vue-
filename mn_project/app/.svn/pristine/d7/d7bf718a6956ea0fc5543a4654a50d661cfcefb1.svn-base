@@ -1,0 +1,71 @@
+<!-- 提币-比特币总数 -->
+<<<<<<< .mine
+<section class="hl-withdraw-total-withdraw-model">
+	<div class="hl-withdraw-total-info">
+		<div class="hl-withdraw-total-info-title">收款地址</div>
+		<div class="hl-withdraw-total-info-address">{{mining.data.address}}</div>
+	</div>
+
+<section class="wrap bg-wrap bg-muted">
+	<dl class="hl-form-group">
+		<dt>收款地址</dt>
+		<dd class="dd-bg font12">sfjdsofjsfjijfoidjfidsjoifsjfjsdfjsji</dd>
+	</dl>
+
+
+
+
+	<div class="hl-withdraw-total-info">
+		<div class="hl-withdraw-total-info-title">
+			<span>可提取&nbsp;&nbsp;比特币</span>
+			<span><b>{{ withdraw.unuseIncome }} </b>(当挖矿7日后解锁)</span>
+		</div>
+		<div class="hl-withdraw-total-input-sum">
+			<input type="number" placeholder="输入提币数量" class="hl-withdraw-total-input-sum-info"  v-model.number="withdraw.useIncome" onfocus="user_ipt()" onkeyup="calculation_cost()"/>
+			<div class="hl-withdraw-total-input-sum-all" onclick="total_get_sure_withdraw_all()">全部提取</div>
+		</div>
+		<div class="hl-withdraw-total-info-price" v-if="withdraw.tipsFlag">
+			<span>手续费</span>
+			<span>{{withdraw.cost}}</span>
+			<span>BTC(费率5%)</span>
+		</div>
+		<div v-else>
+			<span class="hl-withdraw-total-beyond">输入数量超过总量</span>
+		</div>
+	</div>
+
+	<dl class="hl-form-group">
+		<dt>
+			<span>可提币数量：{{ withdraw.sureExtractNum }}</span>
+			<small>(当挖矿7日后解锁)</small>
+		</dt>
+		<dd class="dd-bg">
+			<i></i>
+			<input type="text" placeholder="输入提币数量" class="form-control hl-withdraw-inp"  v-model.number="withdraw.extractAll"/>
+			<a class="fr" onclick="total_get_sure_withdraw_all()">全部提取</a>
+		</dd>
+		<dd class="hl-withdraw-total-info-price">
+			<small>手续费 0 BTC (费率5%)</small>
+			<small class="text-danger hide">输入数量超过总量</small>
+		</dd>
+	</dl>
+
+	<!--<div class="mar-b1">-->
+		<!--可提取⽐比特币：8.9989-->
+		<!--<a class="mar-l1" onclick="">全部提取</a>-->
+	<!--</div>-->
+	<!--<div class="text-muted">-->
+		<!--总⽐比特币：8.9989-->
+		<!--<span class="mar-l1">当⽇挖矿7⽇日后解锁</span>-->
+	<!--</div>-->
+
+	<div class="hl-withdraw-total-withdraw-settings ">
+		<div class="btn btn-primary hl-withdraw-total-withdraw-settings-btn" onclick="catdv.withdraw_start()">提取</div>
+
+	<div class="w-pad wd-btn-box">
+		<button class="btn btn-primary btn-block" onclick="withdraw_start()" type="button">提取</button>
+
+	</div>
+</section>
+
+

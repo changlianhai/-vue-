@@ -1,0 +1,39 @@
+<section class="wrap bg-wrap bg-muted hl-wd-record">
+    <mt-loadmore :top-method="record_top_load" :bottom-method="record_bottom_load" :bottom-all-loaded="listDataEnd" ref="listLoadmore" :auto-fill="false">
+        <div class="hl-mn-list-group hl-wd-record-list record-ico clearfix" id="recordsContent">
+            <dl v-for="(item, index) in withdraw.records">
+                <dt>
+                    <i class="success">成功</i>
+                    {{item.address}}
+                </dt>
+                <dd>
+                    <small>{{item.createtime | showDate}}</small>
+                    <div class="record-btc"><strong>{{item.money}}</strong>BTC</div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <i class="handling">处理中</i>
+                    1LD5Q5D1nd…bdxmGX1wWv
+                </dt>
+                <dd>
+                    <small>2018-05-01&nbsp;&nbsp;13:31</small>
+                    <div class="record-btc"><strong>-1.22345871</strong>BTC</div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <i class="fail">失败</i>
+                    1LD5Q5D1nd…bdxmGX1wWv
+                </dt>
+                <dd>
+                    <small>2018-05-01&nbsp;&nbsp;13:31</small>
+                    <div class="record-btc"><strong>-1.22345871</strong>BTC</div>
+                </dd>
+            </dl>
+        </div>
+    </mt-loadmore>
+</section>
+
+
+

@@ -1,0 +1,18 @@
+<!-- 挖矿中-挖币主界面 -->
+<section class="wrap">
+	<div class="btc-bg tc w-pad">
+		<div class="btc-ico pad-tb2">
+			<i></i>
+		</div>
+		<strong>1.00123456</strong>
+		<div class="mar-b3">总比特币</div>
+		<button class="btn btn-warning mar-b3" type="button" onclick="catdv.link_withdraw_add()">提取</button>
+	</div>
+	<ul class="list-group btc-list clearfix">
+		<li onclick="catdv.link_details()">
+			<i></i>
+			<em>0.22345678 BTC</em>
+			<span>昨天</span>
+		</li>
+	</ul>
+</section>

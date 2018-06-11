@@ -1,0 +1,48 @@
+<!-- 矿机-矿机状态 -->
+<section class="wrap bg-wrap bg-muted">
+	<div class="btc-bg tc w-pad">
+		<div class="btc-ico pad-tb2">
+			<i></i>
+		</div>
+		<div class="miner-state-list pad-b2">
+			<dl>
+				<dt>3</dt>
+				<dd>全部</dd>
+			</dl>
+			<dl>
+				<dt>1</dt>
+				<dd>活跃</dd>
+			</dl>
+			<dl>
+				<dt>2</dt>
+				<dd>不活跃</dd>
+			</dl>
+		</div>
+	</div>
+	<ul class="list-group miner-list mar-t1 clearfix">
+		<li>
+			<h5>
+				<span>猫盘01</span>
+				<small class="text-info">活跃</small>
+				<button class="btn btn-primary btn-sm fr" type="button">关闭</button>
+			</h5>
+			<div class="mar-t1">192.187.0.1</div>
+		</li>
+		<li>
+			<h5>
+				<span>猫盘02</span>
+				<small class="text-muted">不活跃</small>
+				<button class="btn btn-primary btn-sm fr" type="button">开通</button>
+			</h5>
+			<div class="mar-t1">192.187.0.1</div>
+		</li>
+		<li>
+			<h5>
+				<span>猫盘03</span>
+				<small class="text-muted">不活跃</small>
+				<button class="btn btn-primary btn-sm fr" type="button">开启</button>
+			</h5>
+			<div class="mar-t1">192.187.0.1</div>
+		</li>
+	</ul>
+</section>
